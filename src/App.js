@@ -1,12 +1,15 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
 import React, {Component} from 'react';
-
+import { connect } from 'react-redux'
 class App extends Component {
   render() {
   return (
     <div className="App">
-      <header className="App-header">
+      <h3>Recipes Library</h3>
+    
+      <hr/>
+      {/* <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
@@ -19,9 +22,15 @@ class App extends Component {
         >
           Learn React
         </a>
-      </header>
+      </header> */}
     </div>
   );
 }
 }
-export default App;
+const mapStateToProps = (state) => {
+  return {
+    recipes: state.manageRecipe.recipes,
+    load_recipe: state.manageRecipe.load_recipe
+  }
+} 
+export default connect(mapStateToProps)(App);

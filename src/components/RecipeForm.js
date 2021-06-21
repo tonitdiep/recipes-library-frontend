@@ -24,4 +24,7 @@ class RecipeForm extends Component {
     }
 }
 
-export default RecipeForm;
+const mpaDispatchToProps = dispatch => ({
+        load_recipe: load_recipe => dispatch({ type: "LOAD_RECIPE"})
+})
+export default connect(null, mpaDispatchToProps)(RecipeForm);
