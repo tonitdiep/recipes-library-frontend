@@ -17,6 +17,7 @@ class RecipeForm extends Component {
             <div>
                 <form onSubmit={(event) => this.handleOnSubmit(event)}>
                 inside this form
+                {this.state.recipes}
                 </form>
                 
             </div>

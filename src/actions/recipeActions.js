@@ -1,6 +1,7 @@
 export const getRecipes = () => {
+    console.log("inside fetch" )
     return (dispatch) => {
-        fetch(`http://localhost:3000/api/v1/recipes`)
+        fetch('http://localhost:3000/api/v1/recipes')
             .then((res) => res.json())
             .then((recipes) => 
                 dispatch({type: "FETCH_RECIPES_SUCCESS", payload: recipes })

@@ -2,7 +2,13 @@
 import './App.css';
 import React, {Component} from 'react';
 import { connect } from 'react-redux'
+import {getRecipes} from './actions/recipeActions'
 class App extends Component {
+
+  componentDidMount() {
+    // console.log(this.props)
+    this.props.goGetRecipes()
+  }
   render() {
   return (
     <div className="App">
@@ -28,9 +34,16 @@ class App extends Component {
 }
 }
 const mapStateToProps = (state) => {
+  debugger
+  console.log("inside app.js", state)
   return {
-    recipes: state.manageRecipe.recipes,
-    load_recipe: state.manageRecipe.load_recipe
+    recipes: state.recipes,
+    loading: state.loading
   }
 } 
-export default connect(mapStateToProps)(App);
+const mapDispatchToProps = (dispatch) => {
+  return {
+    goGetRecipes: () => dispatch(getRecipes())
+  }
+}
+export default connect(mapStateToProps, mapDispatchToProps)(App);

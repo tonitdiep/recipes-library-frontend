@@ -1,14 +1,15 @@
 function manageRecipe(state = {
-    recipes: [],
+    recipes: [], loading: false
 }, action) {
         switch(action.type){
             
             case 'LOAD_RECIPE':
-            console.log("inside manageRecipe")    
+ 
             return {
                     
                     ...state, 
-                        recipes: [...state.recipes, action.payload]
+                        recipes: [...state.recipes, action.payload],
+                        loading: true
                 }
         default:
             return state

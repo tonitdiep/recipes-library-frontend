@@ -16,7 +16,7 @@ class recipeIndex extends Component {
         )
     }
 }
-    const mapStateToProps = ({recipes}) => {
+    const mapStateToProps = (recipes) => {
         return{
             recipes: recipes.all,
         };
