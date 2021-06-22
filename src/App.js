@@ -3,32 +3,35 @@ import './App.css';
 import React, {Component} from 'react';
 import { connect } from 'react-redux'
 import {getRecipes} from './actions/recipeActions'
+import RecipleListItem from './components/RecipeListItem';
+import RecipeForm from './components/RecipeForm';
+import RecipeListItem from './components/RecipeListItem';
+
 class App extends Component {
 
   componentDidMount() {
-    // console.log(this.props)
+    debugger
+    console.log(this.props)
     this.props.goGetRecipes()
   }
+  handleLoading = () => {
+    if(this.props.loading) {
+      return <div>Loading...</div>
+    } else {
+      return <RecipleListItem recipes={this.props.recipes}/>
+    }
+  }
+  
   render() {
   return (
     <div className="App">
       <h3>Recipes Library</h3>
-    
+      {this.props.recipes}
+      {this.handleLoading}
+      <RecipeForm/>
+      <RecipeListItem/>
       <hr/>
-      {/* <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header> */}
+  
     </div>
   );
 }
