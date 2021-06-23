@@ -1,12 +1,20 @@
-import React from 'react'
+import React, {Component} from 'react'
 
-export default function RecipeListItem({recipe}) {
+class RecipeListItem extends Component {
     // const recipes = props.recipes.map (recipe =>
     //     <recipeActions key={recipe.id}/>)
     //     debugger
-    return (
-        <div>
-            {recipe} 
-        </div>
-    )
+    ListRecipe = () => {
+        debugger
+        return this.props.recipes.map((recipe, i ) => <li key={i} >{recipe.name}<button id={recipe.id}>eeeX</button></li> )
+    }
+    render() {
+        return (
+            <div>
+                {this.ListRecipe} 
+            </div>
+        )
+    }
+
 }
+export default RecipeListItem;

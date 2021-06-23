@@ -11,10 +11,10 @@ class recipeIndex extends Component {
         return (
             <div>
                 <h1>Recipes</h1>
-                {this.props.recipes.map((recipe=> (
+                {/* {this.props.recipes.map((recipe=> (
                     <RecipeListItem recipe={recipe}/>
                 )))}
-                <RecipeListItem/>
+                <RecipeListItem/> */}
             </div>
         )
     }

@@ -1,15 +1,22 @@
 import React, { Component } from 'react'
-import { createRecipe } from "../actions/recipeActions";
+import {createRecipe} from '../actions/recipeActions'
 import {connect} from "react-redux";
 class RecipeForm extends Component {
     state = {
-        name: ''
+        name: '',
+        cuisine_country: '',
+        dietary_type: '',
+        time_to_cook: '',
+        spice_level: '',
+        serviing_size: '',
+        skill_level: ''
+
     }
     handleOnSubmit = (event) => {
         event.preventDefault();
-        this.props.createRecipe(this.state);
+        this.props.addRecipe(this.state);
         this.setState({
-            name: ''
+            name: '',
         })
     }
 
@@ -22,12 +29,29 @@ class RecipeForm extends Component {
         return (
             <div>
                 <form onSubmit={(event) => this.handleOnSubmit(event)}>
-                inside this form
-                <input
-                    type="text"
-                    value={this.state}
-                    onChange={(event) => this.handleOnChange(event)}
-                />
+                <p>Inside submit recipe form</p>
+                <label>Name: </label>
+                <input type="text" value={this.state.name} name="name" onChange={(event) => this.handleOnChange(event)}/><br/>
+                <label>Cusine Country: </label>
+                <input type="text" value={this.state.cuisine_country} name="cuisine_country" onChange={(event) => this.handleOnChange(event)}/><br/>
+                <label>Dietary Type: </label>
+                <input type="text" value={this.state.dietary_type} name="dietary_type" onChange={(event) => this.handleOnChange(event)}/><br/>
+                <label>Cook Time: </label>
+                <input type="integer" value={this.state.time_to_cook} name="time_to_cook" onChange={(event) => this.handleOnChange(event)}/><br/>
+                <label>Spice Level: </label>
+
+                <select type="text" value={this.state.spice_level} name="spice_level" onChange={(event) => this.handleOnChange(event)}>
+                    <option value="0">Select Spice Level:</option>
+                    <option value="1">None</option>
+                    <option value="2">Mild</option>
+                    <option value="3">Spicy</option>
+                    <option value="4">Deadly Spicy</option>
+                </select><br/>
+
+                <label>Serving Size: </label>
+                <input type="integer" value={this.state.serving_size} name="serving_size" onChange={(event) => this.handleOnChange(event)}/><br/>
+                <label>Skill Level: </label>
+                <input type="text" value={this.state.skill_level} name="skill_level" onChange={(event) => this.handleOnChange(event)}/><br/><br/>
                 <input type="submit"/>
                 {/* {this.state.recipes} */}
                 </form>
@@ -39,8 +63,9 @@ class RecipeForm extends Component {
 
 const mapDispatchToProps = dispatch => ({
 
-        load_recipe: load_recipe => dispatch({ type: "LOAD_RECIPE"}),
-        add_recipe: add_recipe => dispatch ({type: "ADD_RECIPE"})
+        loadRecipe: loadRecipe => dispatch({ type: "LOAD_RECIPE"}),
+        recipeLoaded: recipeLoaded => dispatch ({type: "RECIPE_LOADED"})
 
 })
 export default connect(mapDispatchToProps, {createRecipe})(RecipeForm);
+// export default (RecipeForm);
