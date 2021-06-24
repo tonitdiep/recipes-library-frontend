@@ -15,9 +15,9 @@ class App extends Component {
     this.props.goAddRecipe()
     // this.props.addRecipe()
   }
-  addRecipe = () => {
-    debugger
-    this.props.RecipeForm()
+  // addRecipe = () => {
+  //   debugger
+  //   this.props.RecipeForm()
   }
   // handleLoading = () => {
   //   debugger
