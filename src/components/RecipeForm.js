@@ -67,7 +67,7 @@ class RecipeForm extends Component {
                 <input type="integer" value={this.state.serving_size} name="serving_size" onChange={(event) => this.handleOnChange(event)}/><br/>
                 <label>Skill Level: </label>
                 <input type="text" value={this.state.skill_level} name="skill_level" onChange={(event) => this.handleOnChange(event)}/><br/><br/>
-                <input type="submit"/>
+                <input type="submit" value="Submit Recipe"/>
                 {/* {this.state.recipes} */}
                 </form>
                 

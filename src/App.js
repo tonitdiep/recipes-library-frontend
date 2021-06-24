@@ -12,7 +12,7 @@ class App extends Component {
   componentDidMount() {
     console.log(this.props)
     this.props.getRecipes()
-    // this.props.goAddRecipe()
+    this.props.goAddRecipe()
     // this.props.addRecipe()
   }
   addRecipe = () => {
@@ -64,7 +64,7 @@ const mapDispatchToProps = (dispatch) => {
   return {
     getRecipes: () => dispatch(getRecipes()),
     goAddRecipe: () => dispatch(addRecipe())
-    // addRecipe: name => dispatch({type: "ADD_RECIPE", name})
+    // addRecipe: recipe => dispatch({type: "ADD_RECIPE", recipe})
   }
 }
 export default connect(mapStateToProps, mapDispatchToProps)(App);

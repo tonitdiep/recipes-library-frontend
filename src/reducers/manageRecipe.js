@@ -2,7 +2,7 @@ const manageRecipe = (state = {recipes: [], loading: false}, action) => {
         switch(action.type){
             
             case 'LOAD_RECIPES':
-                console.log("loading recipe", state)
+                console.log("reducer loading recipe", state)
             return {
                     
                     ...state, 
