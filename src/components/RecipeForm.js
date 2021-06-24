@@ -29,13 +29,13 @@ class RecipeForm extends Component {
 
     handleOnChange(event) {
         this.setState({
-            name: event.target.value,
-            cuisine_country: event.target.value,
-            dietary_type: event.target.value,
-            time_to_cook: event.target.value,
-            spice_level: event.target.value,
-            serving_size: event.target.value,
-            skill_level: event.target.value
+            [event.target.name]: event.target.value,
+            [event.target.cuisine_country]: event.target.value,
+            [event.target.dietary_type]: event.target.value,
+            [event.target.time_to_cook]: event.target.value,
+            [event.target.spice_level]: event.target.value,
+            [event.target.serving_size]: event.target.value,
+            [event.target.skill_level]: event.target.value
         });
     }
     render() {
