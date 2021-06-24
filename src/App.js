@@ -15,6 +15,9 @@ class App extends Component {
     // this.props.goAddRecipe()
     // this.props.addRecipe()
   }
+  addRecipe = () => {
+    this.props.RecipeForm()
+  }
   // handleLoading = () => {
   //   debugger
   //   if(this.props.loading) {
@@ -37,10 +40,11 @@ class App extends Component {
 
           <ul>{this.props.loading ? <h3>Loading...</h3> : recipes}</ul>
         {/* <RecipleListItem/> */}
-          
+          {this.props.addRecipe}
           <hr/>        
             <h3>Compose A Recipe</h3>
-            <RecipeForm/>
+            {/* <RecipeForm addRecipe={this.props.addRecipe}/> */}
+            <RecipeForm addRecipe={this.addRecipe} /> 
           <hr/>
       
         </div>

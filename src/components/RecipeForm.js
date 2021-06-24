@@ -35,6 +35,7 @@ class RecipeForm extends Component {
     render() {
         return (
             <div>
+                {/* <form onSubmit={this.props.addRecipe}> */}
                 <form onSubmit={(event) => this.handleOnSubmit(event)}>
                 <p>Inside submit recipe form</p>
                 <label>Name: </label>
