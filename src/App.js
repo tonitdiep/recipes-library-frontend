@@ -45,7 +45,7 @@ class App extends Component {
           <hr/>        
             <h3>Compose A Recipe</h3>
             {/* <RecipeForm addRecipe={this.props.addRecipe}/> */}
-            <RecipeForm addRecipe={this.addRecipe} /> 
+            <RecipeForm addRecipe={this.props.addRecipe} /> 
           <hr/>
       
         </div>
