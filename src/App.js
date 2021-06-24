@@ -27,7 +27,7 @@ class App extends Component {
   render() {
     debugger
         const recipes = this.props.recipes.map((recipe, i) => {
-          return <li key={i}>{recipe.id}</li>
+          return <li key={i}>{recipe.name}</li>
         })
     
         
