@@ -30,13 +30,20 @@ class RecipeForm extends Component {
     handleOnChange(event) {
         this.setState({
             name: event.target.value,
+            cuisine_country: event.target.value,
+            dietary_type: event.target.value,
+            time_to_cook: event.target.value,
+            spice_level: event.target.value,
+            serving_size: event.target.value,
+            skill_level: event.target.value
         });
     }
     render() {
+        
         return (
             <div>
                 {/* <form onSubmit={this.props.addRecipe}> */}
-                <form onSubmit={(event) => this.handleOnSubmit(event)}>
+                <form onSubmit={this.handleOnSubmit}>
                 <p>Inside submit recipe form</p>
                 <label>Name: </label>
                 <input type="text" value={this.state.name} name="name" onChange={(event) => this.handleOnChange(event)}/><br/>
@@ -72,7 +79,8 @@ class RecipeForm extends Component {
 const mapDispatchToProps = dispatch => ({
 
         loadRecipe: loadRecipe => dispatch({ type: "LOAD_RECIPE"}),
-        recipeLoaded: recipeLoaded => dispatch ({type: "RECIPE_LOADED"})
+        recipeLoaded: recipeLoaded => dispatch ({type: "RECIPE_LOADED"}),
+        addRecipe: addRecipe => dispatch({ type: "ADD_RECIPE"})
 
 })
 export default connect(mapDispatchToProps, {addRecipe})(RecipeForm);
