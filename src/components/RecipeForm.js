@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import {createRecipe} from '../actions/recipeActions'
+// import {createRecipe} from '../actions/recipeActions'
+import {addRecipe} from '../actions/recipeActions'
 import {connect} from "react-redux";
 class RecipeForm extends Component {
     state = {
@@ -17,6 +18,12 @@ class RecipeForm extends Component {
         this.props.addRecipe(this.state);
         this.setState({
             name: '',
+            cuisine_country: '',
+            dietary_type: '',
+            time_to_cook: '',
+            spice_level: '',
+            serviing_size: '',
+            skill_level: ''
         })
     }
 
@@ -67,5 +74,5 @@ const mapDispatchToProps = dispatch => ({
         recipeLoaded: recipeLoaded => dispatch ({type: "RECIPE_LOADED"})
 
 })
-export default connect(mapDispatchToProps, {createRecipe})(RecipeForm);
+export default connect(mapDispatchToProps, {addRecipe})(RecipeForm);
 // export default (RecipeForm);

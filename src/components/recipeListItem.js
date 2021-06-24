@@ -6,7 +6,7 @@ class RecipeListItem extends Component {
     //     debugger
     ListRecipe = () => {
         debugger
-        return this.props.recipes.map((recipe, i ) => <li key={i} >{recipe.name}<button id={recipe.id}>eeeX</button></li> )
+        return this.props.recipes.map((recipe) => <li key={recipe.id} ><button id={recipe.id}>EEE</button></li> )
     }
     render() {
         return (
@@ -18,3 +18,13 @@ class RecipeListItem extends Component {
 
 }
 export default RecipeListItem;
+
+// import React from "react";
+
+// export default function RecipeListItem({ recipe }) {
+//   return (
+//     <div>
+//       {this.props.recipe} 
+//     </div>
+//   );
+// }
