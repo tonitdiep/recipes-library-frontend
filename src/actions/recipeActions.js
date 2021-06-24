@@ -1,7 +1,6 @@
 export const getRecipes = () => {
     console.log("inside fetch" )
     return (dispatch) => {
-        debugger
         dispatch({ type: "LOAD_RECIPES"})
         fetch('http://localhost:3000/api/v1/recipes')
             .then((res) => res.json())

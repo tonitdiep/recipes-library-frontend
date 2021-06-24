@@ -12,7 +12,7 @@ class App extends Component {
   componentDidMount() {
     console.log(this.props)
     this.props.getRecipes()
-    this.props.goAddRecipe()
+    // this.props.goAddRecipe()
     // this.props.addRecipe()
   }
   // handleLoading = () => {
@@ -25,7 +25,7 @@ class App extends Component {
   // }
   
   render() {
-    debugger
+    console.log("app render")
         const recipes = this.props.recipes.map((recipe, i) => {
           return <li key={i}>{recipe.name}</li>
         })
@@ -55,7 +55,7 @@ const mapStateToProps = (state) => {
   }
 } 
 const mapDispatchToProps = (dispatch) => {
-  debugger
+  
   return {
     getRecipes: () => dispatch(getRecipes()),
     goAddRecipe: () => dispatch(addRecipe())
