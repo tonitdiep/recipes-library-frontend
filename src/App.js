@@ -2,8 +2,6 @@
 import './App.css';
 import React, {Component} from 'react';
 
-import RecipleListItem from './components/RecipeListItem';
-import RecipeForm from './components/RecipeForm';
 import RecipeContainer from './containers/RecipeContainer';
 
 
@@ -39,13 +37,13 @@ class App extends Component {
           <h1>Recipes Library</h1>
           <RecipeContainer/>
           {/* <ul>{this.props.loading ? <h3>Loading...</h3> : recipes}</ul> */}
-        <RecipleListItem/>
+        {/* <RecipleListItem/> */}
           {/* {this.props.addRecipe} */}
-          <hr/>        
-            <h3>Compose A Recipe</h3>
-            {/* <RecipeForm addRecipe={this.props.addRecipe}/> */}
-            <RecipeForm addRecipe={this.props.addRecipe} /> 
-          <hr/>
+          {/* <hr/>         */}
+            {/* <h3>Compose A Recipe</h3> */}
+
+            {/* <RecipeForm addRecipe={this.props.addRecipe} />  */}
+          {/* <hr/> */}
       
         </div>
   );
