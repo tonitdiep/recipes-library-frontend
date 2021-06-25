@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 // import {createRecipe} from '../actions/recipeActions'
-import {addRecipe} from '../actions/recipeActions'
+import {addRecipe} from '../actions/addRecipe'
 import {connect} from "react-redux";
 class RecipeForm extends Component {
     state = {

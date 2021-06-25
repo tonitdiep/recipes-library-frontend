@@ -1,24 +1,25 @@
-const manageRecipe = (state = {recipes: [], loading: false}, action) => {
+const manageRecipe = (state = {recipes: []}, action) => {
         switch(action.type){
             
-            case 'LOAD_RECIPES':
+            case 'FETCH_RECIPES':
                 console.log("reducer loading recipe", state)
             return {
                     
                     ...state, 
-                        // recipes: [...state.recipes],
-                        // recipes: [...state.recipes, action.payload],
-                        loading: true
+                        // recipes: [...state.recipes]
+                        // recipes: action.payload
+                        recipes: [...state.recipes, action.payload]
+                        // loading: true
                 }
 
-            case 'RECIPES_LOADED': 
-                console.log("recipes all loaded", action)
-                return {
-                    ...state, 
-                    // recipes: [...state.recipes],
-                    recipes: [...state.recipes, action.payload], 
-                    loading: false
-                }
+            // case 'RECIPES_LOADED': 
+            //     console.log("recipes all loaded", action)
+            //     return {
+            //         ...state, 
+            //         // recipes: [...state.recipes],
+            //         recipes: [...state.recipes, action.payload],
+            //         loading: false
+            //     }
             case 'ADD_RECIPE':
                 return {
                     ...state,
