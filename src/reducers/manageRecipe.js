@@ -13,18 +13,21 @@ const manageRecipe = (state = {recipes: []}, action) => {
                         // loading: true
                 }
 
-            // case 'DELETE_RECIPES': 
-            //     console.log("recipes all loaded", action)
+
+            case 'ADD_RECIPE':
+                // debugger
+                return {...state, recipes: [...state.recipes, action.payload]}
+
+
+                        // case 'DELETE_RECIPE': 
+            //     console.log("delete recipe", action)
+                // const recipes = state.recipes.filter(recipe=> recipe.id !== action.id)
             //     return {
             //         ...state, 
             //         // recipes: [...state.recipes],
             //         recipes: [...state.recipes, action.payload],
             //         loading: false
-            //     }
-            case 'ADD_RECIPE':
-                // debugger
-                return {...state, recipes: [...state.recipes, action.payload]}
-
+            //     }    
         default:
             return state
         }

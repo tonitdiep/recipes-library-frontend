@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
-import {fetchRecipes} from '../actions/fetchRecipes'
 import {connect} from 'react-redux' 
+import {Route} from 'react-router-dom'
+import {fetchRecipes} from '../actions/fetchRecipes'
 import RecipeList from '../components/RecipeList';
 import RecipeForm from '../components/RecipeForm';
 
@@ -12,10 +13,14 @@ class RecipeContainer extends Component {
     render() {
         return (
             <div>
-                <h2>Recipe Container</h2> 
+
+                <h2>Recipe Container</h2>
+                <Route path='/recipes/new' component={RecipeForm}/>
+        <Route exact path='/recipes' render={() => <RecipeList recipes={this.props.recipes}/>}/>
                 {this.props.fetchRecipes}
-                <RecipeList recipes={this.props.recipes}/>
-                <RecipeForm />
+                <RecipeList recipes={this.props.recipes}/>   
+                {/* exact ^^^ can delete */}
+                {/* <RecipeForm /> */}
             </div>
         )
     }
