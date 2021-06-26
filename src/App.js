@@ -2,7 +2,7 @@
 import './App.css';
 import React, {Component} from 'react';
 import RecipeContainer from './containers/RecipeContainer';
-import {connect} from 'react-redux'
+// import {connect} from 'react-redux'
 
 class App extends Component {
   // componentDidMount() {
@@ -35,15 +35,7 @@ class App extends Component {
         <div className="App">
           <h1>Recipes Library</h1>
           <RecipeContainer/>
-          {/* <ul>{this.props.loading ? <h3>Loading...</h3> : recipes}</ul> */}
-        {/* <RecipleListItem/> */}
-          {/* {this.props.addRecipe} */}
-          {/* <hr/>         */}
-            {/* <h3>Compose A Recipe</h3> */}
 
-            {/* <RecipeForm addRecipe={this.props.addRecipe} />  */}
-          {/* <hr/> */}
-      
         </div>
   );
 }

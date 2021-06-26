@@ -60,6 +60,7 @@
 
 
 import React from 'react'
+// import {Link} from 'react-router-dom'
 const RecipeList = (props) => {
     console.log(props)
         //     const recipes = props.recipes.map((recipe) => {
@@ -68,7 +69,12 @@ const RecipeList = (props) => {
     return (
         <div>
           <h2>Recipe List #testing</h2><hr/>
-          {props.recipes[0].map(recipe => <li key={recipe.id}>{recipe.name}<br/>{recipe.dietary_type}</li>)}
+          {props.recipes.map(recipe => 
+              <li key={recipe.id}>
+                {/* <Link to={`/api/v1/recipes/${recipe.id}`}> {recipe.name}<br/>{recipe.dietary_type} </Link> */}
+                {recipe.name}<br/>{recipe.dietary_type}
+              
+              </li>)}
           {/* {recipes} */}
           {/* <ul>{recipes}</ul> */}
 

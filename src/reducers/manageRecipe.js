@@ -21,10 +21,8 @@ const manageRecipe = (state = {recipes: []}, action) => {
             //         loading: false
             //     }
             case 'ADD_RECIPE':
-                return {
-                    ...state,
-                    loading: true
-                }
+                return {...state, recipes: [...state.recipes, action.payload]}
+                
         default:
             return state
         }
