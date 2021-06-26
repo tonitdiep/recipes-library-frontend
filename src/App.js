@@ -1,9 +1,8 @@
 // import logo from './logo.svg';
 import './App.css';
 import React, {Component} from 'react';
-
 import RecipeContainer from './containers/RecipeContainer';
-
+import {connect} from 'react-redux'
 
 class App extends Component {
   // componentDidMount() {

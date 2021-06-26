@@ -12,9 +12,10 @@ class RecipeContainer extends Component {
     render() {
         return (
             <div>
+                <h2>Recipe Container</h2> 
                 {this.props.fetchRecipes}
-                <RecipleList/>
-                <RecipeForm/>
+                <RecipleList recipes={this.props.recipes}/>
+                <RecipeForm />
             </div>
         )
     }
@@ -24,7 +25,7 @@ const mapStateToProps = (state) => {
     // console.log('index map', recipes)
     return{
         // recipes: recipes.all
-        recipes:state.recipes
+        recipes: state.recipes
     };
 };
 export default connect(mapStateToProps, {fetchRecipes})(RecipeContainer);

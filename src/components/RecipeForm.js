@@ -44,7 +44,7 @@ class RecipeForm extends Component {
             <div>
                 {/* <form onSubmit={this.props.addRecipe}> */}
                 <form onSubmit={this.handleOnSubmit}>
-                <p>Inside submit recipe form</p>
+                <p>Inside submit recipe form #testing.2</p>
                 <label>Name: </label>
                 <input type="text" value={this.state.name} name="name" onChange={(event) => this.handleOnChange(event)}/><br/>
                 <label>Cusine Country: </label>
