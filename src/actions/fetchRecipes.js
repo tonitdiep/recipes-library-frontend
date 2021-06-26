@@ -1,4 +1,4 @@
-export const fetchRecipes = (action) => {
+export const fetchRecipes = () => {
     console.log("inside fetchRecipes fetch" )
     return (dispatch) => {
         // dispatch({ type: "LOAD_RECIPES"})

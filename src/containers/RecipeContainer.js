@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import {fetchRecipes} from '../actions/fetchRecipes'
 import {connect} from 'react-redux' 
-import RecipleList from '../components/RecipeList';
+import RecipeList from '../components/RecipeList';
 import RecipeForm from '../components/RecipeForm';
 
 class RecipeContainer extends Component {
@@ -14,7 +14,7 @@ class RecipeContainer extends Component {
             <div>
                 <h2>Recipe Container</h2> 
                 {this.props.fetchRecipes}
-                <RecipleList recipes={this.props.recipes}/>
+                <RecipeList recipes={this.props.recipes}/>
                 <RecipeForm />
             </div>
         )

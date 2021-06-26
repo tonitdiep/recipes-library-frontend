@@ -14,22 +14,24 @@ class RecipeForm extends Component {
 
     }
     handleOnSubmit = (event) => {
+        alert('A recipe was submitted: ' + this.state.value);
         event.preventDefault();
         this.props.addRecipe(this.state);
-        // this.setState({
-        //     name: '',
-        //     cuisine_country: '',
-        //     dietary_type: '',
-        //     time_to_cook: '',
-        //     spice_level: '',
-        //     serviing_size: '',
-        //     skill_level: ''
-        // })
+        this.setState({
+            name: '',
+            cuisine_country: '',
+            dietary_type: '',
+            time_to_cook: '',
+            spice_level: '',
+            serving_size: '',
+            skill_level: ''
+        })
     }
 
     handleOnChange(event) {
         this.setState({
-            [event.target.name]: event.target.value,
+            [event.target.name]: event.target.value
+            ,
             [event.target.cuisine_country]: event.target.value,
             [event.target.dietary_type]: event.target.value,
             [event.target.time_to_cook]: event.target.value,
@@ -44,7 +46,7 @@ class RecipeForm extends Component {
             <div>
                 {/* <form onSubmit={this.props.addRecipe}> */}
                 <form onSubmit={this.handleOnSubmit}>
-                <p>Inside submit recipe form #testing.2</p>
+                <h3>Add Recipe Form</h3>
                 <label>Name: </label>
                 <input type="text" value={this.state.name} name="name" onChange={(event) => this.handleOnChange(event)}/><br/>
                 <label>Cusine Country: </label>

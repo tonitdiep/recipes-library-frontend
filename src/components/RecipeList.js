@@ -68,15 +68,15 @@ const RecipeList = (props) => {
         // }) 
     return (
         <div>
-          <h2>Recipe List #testing</h2><hr/>
+          <hr/>
+          <h2>Recipe List #testing</h2>
           {props.recipes.map(recipe => 
               <li key={recipe.id}>
-                {/* <Link to={`/api/v1/recipes/${recipe.id}`}> {recipe.name}<br/>{recipe.dietary_type} </Link> */}
+                {/* <Link to={`/recipes/${recipe.id}`}> {recipe.name}<br/>{recipe.dietary_type} </Link> */}
                 {recipe.name}<br/>{recipe.dietary_type}
               
               </li>)}
-          {/* {recipes} */}
-          {/* <ul>{recipes}</ul> */}
+            <hr/>
 
         </div>
     )
