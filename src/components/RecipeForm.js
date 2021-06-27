@@ -86,4 +86,3 @@ class RecipeForm extends Component {
 
 // })
 export default connect(null, {addRecipe})(RecipeForm);
-// export default (RecipeForm);
