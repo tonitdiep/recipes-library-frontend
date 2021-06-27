@@ -60,6 +60,7 @@
 
 
 import React from 'react'
+// import RecipeShow from './RecipeShow'
 // import {Link} from 'react-router-dom'
 const RecipeList = (props) => {
     console.log(props)
@@ -69,11 +70,11 @@ const RecipeList = (props) => {
     return (
         <div>
           <hr/>
-          <h2>Recipe List #testing</h2>
+          <h2>Recipe List</h2>
           {props.recipes.map(recipe => 
               <li key={recipe.id}>
                 {/* <Link to={`/recipes/${recipe.id}`}> {recipe.name}<br/>{recipe.dietary_type} </Link> */}
-          
+                {/* <RecipeShow recipe={recipe}/> */}
                {recipe.name}<br/>{recipe.dietary_type}
               
 

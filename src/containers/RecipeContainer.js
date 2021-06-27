@@ -9,17 +9,23 @@ class RecipeContainer extends Component {
     componentDidMount() {
         this.props.fetchRecipes();
     }
-    
+     
     render() {
         return (
             <div>
 
                 <h2>Recipe Container</h2>
                 <Route path='/recipes/new' component={RecipeForm}/>
-        <Route exact path='/recipes' render={() => <RecipeList recipes={this.props.recipes}/>}/>
-                {this.props.fetchRecipes}
-                <RecipeList recipes={this.props.recipes}/>   
+                {/* <Route exact path='/recipes' component={<RecipeList/>}/> */}
+
+                All Recipes: <Route exact path='/recipes' render={() => <RecipeList recipes={this.props.recipes}/>}/>
+                Show A Recipe ID: <Route exact path='recipes/:id' render={() => <RecipeList recipes={this.props.recipes}/>}/>
+               
+                {/* {this.props.fetchRecipes} */}
+               
+                {/* <RecipeList recipes={this.props.recipes}/>    */}
                 {/* exact ^^^ can delete */}
+
                 {/* <RecipeForm /> */}
             </div>
         )
