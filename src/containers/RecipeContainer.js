@@ -15,11 +15,12 @@ class RecipeContainer extends Component {
             <div>
 
                 <h2>Recipe Container</h2>
+
                 <Route path='/recipes/new' component={RecipeForm}/>
                 {/* <Route exact path='/recipes' component={<RecipeList/>}/> */}
-                Show A Recipe ID: <Route path='recipes/:id' render={(routerProps) => <RecipeShow {...routerProps} recipes={this.props.recipes}/>}/>
+                Show A Recipe ID: <Route path='recipes/:id' render={(routerProps) => <RecipeShow {...routerProps} recipes={this.props.recipes}/>}/><br/>
                 All Recipes: <Route exact path='/recipes' render={(routerProps) => <RecipeList {...routerProps} recipes={this.props.recipes}/>}/>
-  
+
                
                 {/* {this.props.fetchRecipes} */}
                

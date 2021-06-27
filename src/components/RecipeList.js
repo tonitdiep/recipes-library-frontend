@@ -1,6 +1,6 @@
 import React from 'react'
-import {Route, Link} from 'react-router-dom'
-import RecipeShow from './RecipeShow'
+import {Link} from 'react-router-dom'
+
 const RecipeList = (props) => {
 // debugger
             // const recipes = props.recipes.map((recipe) => {
