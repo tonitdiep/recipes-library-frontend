@@ -10,7 +10,7 @@ const RecipeList = (props) => {
         // }) 
        const handleDelete = (recipe) => {
          debugger
-          props.deleteRecipe(recipe.id)
+           props.deleteRecipe(recipe.id)
         }
     return (
       

@@ -21,12 +21,12 @@ class RecipeContainer extends Component {
                 {/* <Route exact path='/recipes' component={<RecipeList/>}/> */}
                 {/* Show A Recipe ID: <Route exact path='recipes/:id' render={(routerProps) => <RecipeShow {...routerProps} recipes={this.props.recipes}/>}/><br/> */}
                 All Recipes: <Route exact path='/recipes' render={(routerProps) => <RecipeList {...routerProps} recipes={this.props.recipes}/>}/>
-                {/* Show A Recipe ID: <Route exact path='recipes/:id' render={(routerProps) => <RecipeShow {...routerProps} recipes={this.props.recipe}/>}/><br/> */}
+                Show A Recipe ID: <Route exact path='recipes/:id' render={(routerProps) => <RecipeShow {...routerProps} recipes={this.props.recipe}/>}/><br/>
 
                
                 {/* <RecipeList recipes={this.props.recipes}/>    */}
                 {/* exact ^^^ can delete */}
-                <RecipeShow recipes={this.props.recipes}/>
+                {/* <RecipeShow recipes={this.props.recipes}/> */}
   
             </Switch>
             </div>
