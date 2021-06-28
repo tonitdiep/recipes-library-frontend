@@ -19,17 +19,15 @@ class RecipeContainer extends Component {
             <Switch>    
                 <Route path='/recipes/new' component={RecipeForm}/>
                 {/* <Route exact path='/recipes' component={<RecipeList/>}/> */}
+                {/* Show A Recipe ID: <Route exact path='recipes/:id' render={(routerProps) => <RecipeShow {...routerProps} recipes={this.props.recipes}/>}/><br/> */}
                 All Recipes: <Route exact path='/recipes' render={(routerProps) => <RecipeList {...routerProps} recipes={this.props.recipes}/>}/>
-                Show A Recipe ID: <Route exact path='recipes/:id' render={(routerProps) => <RecipeShow {...routerProps} recipes={this.props.recipes}/>}/><br/>
+                {/* Show A Recipe ID: <Route exact path='recipes/:id' render={(routerProps) => <RecipeShow {...routerProps} recipes={this.props.recipe}/>}/><br/> */}
 
-
-               
-                {/* {this.props.fetchRecipes} */}
                
                 {/* <RecipeList recipes={this.props.recipes}/>    */}
                 {/* exact ^^^ can delete */}
-
-                {/* <RecipeForm /> */}
+                <RecipeShow recipes={this.props.recipes}/>
+  
             </Switch>
             </div>
             
