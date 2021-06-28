@@ -15,7 +15,7 @@ const manageRecipe = (state = {recipes: []}, action) => {
 
 
             case 'ADD_RECIPE':
-                // debugger
+                debugger
                 return {...state, recipes: [...state.recipes, action.payload]}
 
 

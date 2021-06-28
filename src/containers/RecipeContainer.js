@@ -37,6 +37,7 @@ const mapStateToProps = (state) => {
     return{
         // recipes: recipes.all
         recipes: state.recipes
+        // recipes: state.recipes.recipes
     };
 };
 export default connect(mapStateToProps, {fetchRecipes})(RecipeContainer);

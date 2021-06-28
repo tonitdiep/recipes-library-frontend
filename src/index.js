@@ -8,9 +8,12 @@ import {createStore, applyMiddleware, compose} from 'redux';
 import manageRecipe from './reducers/manageRecipe'
 import thunk from 'redux-thunk'
 import {BrowserRouter as Router} from 'react-router-dom'
-const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+import { composeWithDevTools} from 'redux-devtools-extension'
 
-let store = createStore(manageRecipe, composeEnhancers(applyMiddleware(thunk)))
+// const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+// let store = createStore(manageRecipe, composeEnhancers(applyMiddleware(thunk)))
+
+let store = createStore(manageRecipe, composeWithDevTools(applyMiddleware(thunk)))
 
 
 ReactDOM.render(

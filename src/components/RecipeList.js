@@ -31,5 +31,3 @@ const RecipeList = (props) => {
 export default connect(null, {deleteRecipe})(RecipeList)
 
 
-                  {/* <br/>{recipe.dietary_type} */}
-                  {/* <RecipeShow recipe={recipe}/> */}
