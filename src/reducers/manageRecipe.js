@@ -19,15 +19,22 @@ const manageRecipe = (state = {recipes: []}, action) => {
                 return {...state, recipes: [...state.recipes, action.payload]}
 
 
-                        // case 'DELETE_RECIPE': 
-            //     console.log("delete recipe", action)
-                // const recipes = state.recipes.filter(recipe=> recipe.id !== action.id)
-            //     return {
-            //         ...state, 
-            //         // recipes: [...state.recipes],
-            //         recipes: [...state.recipes, action.payload],
-            //         loading: false
-            //     }    
+                case 'DELETE_RECIPE': 
+                console.log("delete recipe", action)
+                const recipeDeleting = state.recipes.filter(recipe => 
+                    {
+                        if (recipe.id === action.payload.id) {
+                            return action.payload
+                        } else {
+                            return recipe
+                        }
+                    })
+
+                return {
+                    // ...state, recipes: [...state.recipes, action.payload]
+                    ...state, recipes: recipeDeleting
+               
+                }    
         default:
             return state
         }
