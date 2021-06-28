@@ -5,20 +5,19 @@ import {deleteRecipe} from '../actions/deleteRecipe'
 
 const RecipeList = (props) => {
 // debugger
-            // const recipes = props.recipes.map((recipe) => {
-          // return <li key={recipe.id}></li>
-        // }) 
+      //  const recipes = props.recipes.map((recipe) => {
+          // return <li key={recipe.id}></li>})
+
        const handleDelete = (recipe) => {
-         debugger
            props.deleteRecipe(recipe.id)
         }
     return (
       
         <div>
+
           <hr/>
           <h2>Recipe List</h2>
-          {props.recipes.map(recipe => 
-
+          {props.recipes.map(recipe =>
                 <li key={recipe.id}> 
                   <Link to={`/recipes/${recipe.id}`}> {recipe.name} </Link>
                   {/* <br/>{recipe.dietary_type} */}

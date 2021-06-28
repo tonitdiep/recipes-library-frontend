@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import {connect} from 'react-redux' 
-import {Route, Switch} from 'react-router-dom'
+import {Route} from 'react-router-dom'
 import {fetchRecipes} from '../actions/fetchRecipes'
 import RecipeForm from '../components/RecipeForm';
 import RecipeList from '../components/RecipeList';
@@ -16,19 +16,16 @@ class RecipeContainer extends Component {
             <div>
 
                 <h2>Recipe Container</h2>
-            <Switch>    
+            {/* <Switch>     */}
                 <Route path='/recipes/new' component={RecipeForm}/>
-                {/* <Route exact path='/recipes' component={<RecipeList/>}/> */}
+                
                 {/* Show A Recipe ID: <Route exact path='recipes/:id' render={(routerProps) => <RecipeShow {...routerProps} recipes={this.props.recipes}/>}/><br/> */}
+                
                 All Recipes: <Route exact path='/recipes' render={(routerProps) => <RecipeList {...routerProps} recipes={this.props.recipes}/>}/>
-                Show A Recipe ID: <Route exact path='recipes/:id' render={(routerProps) => <RecipeShow {...routerProps} recipes={this.props.recipe}/>}/><br/>
+                Show A Recipe ID: <Route path='recipes/:id' render={(routerProps) => <RecipeShow {...routerProps} recipes={this.props.recipe}/>}/><br/>
 
                
-                {/* <RecipeList recipes={this.props.recipes}/>    */}
-                {/* exact ^^^ can delete */}
-                {/* <RecipeShow recipes={this.props.recipes}/> */}
-  
-            </Switch>
+            {/* </Switch> */}
             </div>
             
         )

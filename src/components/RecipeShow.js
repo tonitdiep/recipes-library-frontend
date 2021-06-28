@@ -2,9 +2,9 @@ import React from 'react'
 // import {Redirect} from 'react-router-dom'
 const RecipeShow = (props) => {
     debugger
-    let recipe = props.recipes[props.match.params.id - 1]
+    // let recipe = props.recipes[props.match.params.id - 1]
     // debugger 
-    // let recipe = props.recipes.filter(recipe => recipe.id === parseInt( props.match.params.id))[0]
+    let recipe = props.recipes.filter(recipe => recipe.id === props.match.params.id)[0]
     console.log(recipe)
     return (
         <div>

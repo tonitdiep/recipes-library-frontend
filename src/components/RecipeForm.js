@@ -56,7 +56,7 @@ class RecipeForm extends Component {
                 <label>Dietary Type: </label>
                 <input type="text" value={this.state.dietary_type} name="dietary_type" onChange={(event) => this.handleOnChange(event)}/><br/>
                 <label>Cook Time: </label>
-                <input type="integer" value={this.state.cook_time} name="cook_time" onChange={(event) => this.handleOnChange(event)}/><br/>
+                <input type="number" value={this.state.cook_time} name="cook_time" onChange={(event) => this.handleOnChange(event)}/> minutes<br/>
                 <label>Spice Level: </label>
 
                 <select type="text" value={this.state.spice_level} name="spice_level" onChange={(event) => this.handleOnChange(event)}>
@@ -67,9 +67,10 @@ class RecipeForm extends Component {
                     <option value="4">Deadly Spicy</option>
                 </select><br/>
                 <label>Rating: </label>
-                <input type="integer" value={this.state.rating} name="rating" onChange={(event) => this.handleOnChange(event)}/><br/>
+                
+                <input type="number" value={this.state.rating} step="0.01" min="1" max="5" name="rating" onChange={(event) => this.handleOnChange(event)}/><br/>
                 <label>Serving Size: </label>
-                <input type="integer" value={this.state.serving_size} name="serving_size" onChange={(event) => this.handleOnChange(event)}/><br/>
+                <input type="number" value={this.state.serving_size} name="serving_size" step="0.01" min="0" max="5" onChange={(event) => this.handleOnChange(event)}/><br/>
                 <label>Skill Level: </label>
                 <input type="text" value={this.state.skill_level} name="skill_level" onChange={(event) => this.handleOnChange(event)}/><br/><br/>
                 <input type="submit" value="Submit Recipe"/>
