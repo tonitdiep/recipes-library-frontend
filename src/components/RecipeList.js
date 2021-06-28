@@ -14,22 +14,16 @@ const RecipeList = (props) => {
     return (
       
         <div>
-
           <hr/>
           <h2>Recipe List</h2>
-          {props.recipes.map(recipe =>
-                <li key={recipe.id}> 
-                  <Link to={`/recipes/${recipe.id}`}> {recipe.name} </Link>
-                  {/* <br/>{recipe.dietary_type} */}
-                  {/* <RecipeShow recipe={recipe}/> */}
-                  <button onClick={() => handleDelete(recipe)}>DeLeTe {recipe.name}</button>
-
-              </li>
-              
-
-              )}
-            <hr/>
-
+          {props.recipes.map(recipe => <li key={recipe.id}>
+            <Link to={`/recipes/${recipe.id}`}> {recipe.name} </Link>
+            
+            <button onClick={() => handleDelete(recipe)}>DeLeTe {recipe.name}</button>
+            
+            </li>)}
+            
+          <hr/>
         </div>
     )
 }
@@ -37,4 +31,5 @@ const RecipeList = (props) => {
 export default connect(null, {deleteRecipe})(RecipeList)
 
 
-
+                  {/* <br/>{recipe.dietary_type} */}
+                  {/* <RecipeShow recipe={recipe}/> */}

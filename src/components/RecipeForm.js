@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-// import {createRecipe} from '../actions/recipeActions'
 import {addRecipe} from '../actions/addRecipe'
 import {connect} from "react-redux";
 class RecipeForm extends Component {
@@ -30,16 +29,16 @@ class RecipeForm extends Component {
         })
     }
 
-    handleOnChange(event) {
+    handleOnChange = (event) => {
         this.setState({
-            [event.target.name]: event.target.value,
-            [event.target.cuisine_country]: event.target.value,
-            [event.target.dietary_type]: event.target.value,
-            [event.target.cook_time]: event.target.value,
-            [event.target.spice_level]: event.target.value,
-            [event.target.rating]: event.target.value,
-            [event.target.serving_size]: event.target.value,
-            [event.target.skill_level]: event.target.value
+            [event.target.name]: event.target.value
+            // [event.target.cuisine_country]: event.target.value,
+            // [event.target.dietary_type]: event.target.value,
+            // [event.target.cook_time]: event.target.value,
+            // [event.target.spice_level]: event.target.value,
+            // [event.target.rating]: event.target.value,
+            // [event.target.serving_size]: event.target.value,
+            // [event.target.skill_level]: event.target.value
         });
     }
     render() {
