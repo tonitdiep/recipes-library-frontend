@@ -67,7 +67,7 @@ class RecipeForm extends Component {
                 <input type="number" value={this.state.serving_size} name="serving_size" step="0" min="0" max="5" onChange={(event) => this.handleOnChange(event)}/><br/><br/>
                 
                 <label>Skill Level: </label>
-                <select  value={this.state.skill_level} name="skill_level" onChange={(event) => this.handleOnChange(event)}>
+                <select  type="text" value={this.state.skill_level} name="skill_level" onChange={(event) => this.handleOnChange(event)}>
                     <option value="0">Select Skill Level:</option>
                     <option value="1">Easy</option>
                     <option value="2">Difficult</option>
