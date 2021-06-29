@@ -7,11 +7,11 @@ class RecipeForm extends Component {
         cuisine_country: '',
         dietary_type: '',
         cook_time: null,
-        spice_level: '',
+        spice_level: null,
         rating: null,
         serving_size: null,
         skill_level: '',
-        starred: null
+        starred: false 
 
     }
     handleOnSubmit = (event) => {
@@ -27,7 +27,7 @@ class RecipeForm extends Component {
             rating: null,
             serving_size: null,
             skill_level: '',
-            starred: null
+            starred: false
         })
     }
 
@@ -51,6 +51,7 @@ class RecipeForm extends Component {
                 <input type="text" value={this.state.dietary_type} name="dietary_type" onChange={(event) => this.handleOnChange(event)}/><br/><br/>
                 <label>Cook Time: </label>
                 <input type="number" value={this.state.cook_time}  step="0" min="1" max="60" name="cook_time" onChange={(event) => this.handleOnChange(event)}/> minutes<br/><br/>
+                
                 <label>Spice Level: </label>
                 <select type="text" value={this.state.spice_level} name="spice_level" onChange={(event) => this.handleOnChange(event)}>
                     <option value="0">Select Spice Level:</option>
@@ -59,6 +60,7 @@ class RecipeForm extends Component {
                     <option value="3">Spicy</option>
                     <option value="4">Deadly Spicy</option>
                 </select><br/><br/>
+                
                 <label>Rating: </label>     
                 <input type="number" value={this.state.rating} step="0" min="1" max="5" name="rating" onChange={(event) => this.handleOnChange(event)}/><br/><br/>
                 <label>Serving Size: </label>
@@ -72,7 +74,7 @@ class RecipeForm extends Component {
                 </select><br/><br/>
                 
                 <label>Starred Recipe </label>
-                <input type="number" value={this.state.starred} name="starred" onChang={(event) => this.handleOnChange(event)}/><br/><br/>
+                <input type="checkbox" value={this.state.starred} name="starred" onChang={(event) => this.handleOnChange(event)}/><br/><br/>
                 
                 <input type="submit" value="Submit Recipe"/>
                 {/* {this.state.recipes} */}

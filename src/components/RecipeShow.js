@@ -7,14 +7,14 @@ const RecipeShow = (props) => {
     return (
         <div>
             <h2>
-        
-                {recipe ? recipe.name : null}<br/>
-                {recipe ? recipe.dietary_type : null}<br/>
-                {recipe ? recipe.cook_time : null} minutes <br/> 
-                {recipe ? recipe.cuisine_country : null}<br/> 
-                {recipe ? recipe.skill_level : null}
+                <h3>Recipe Details</h3>
+                Name: {recipe ? recipe.name : null}<br/>
+                Dietary Type: {recipe ? recipe.dietary_type : null}<br/>
+                Cook Time: {recipe ? recipe.cook_time : null} minutes <br/> 
+                Cuisine Country: {recipe ? recipe.cuisine_country : null}<br/> 
+                Skill Level: {recipe ? recipe.skill_level : null}<br/>
+                Starred: {recipe ? recipe.starred : null}
 
-                {/* {recipe  && recipe.name} */}
             </h2>
         </div>
     )

@@ -16,14 +16,21 @@ const manageRecipe = (state = {recipes: []}, action) => {
 
             case 'ADD_RECIPE':
                 debugger
-                return {...state, recipes: [...state.recipes, action.payload]}
-
-
+                let recipes = state.recipes.map(recipe =>{
+                    if (recipe.id === action.payload.id) {
+                        return action.payload
+                    } else {
+                        return recipe
+                    }
+                })
+                // return {recipes: [...state.recipes, action.payload]}
+                return {...state, recipes: recipes}
+             
                 case 'DELETE_RECIPE': 
                 console.log("delete recipe", action)
                 const recipeDeleting = state.recipes.filter(recipe => 
                     {
-                        if (recipe.id === action.payload.id) {
+                        if (recipe.id == action.payload.id) {
                             return action.payload
                         } else {
                             return recipe
