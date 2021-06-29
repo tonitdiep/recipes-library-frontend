@@ -3,7 +3,7 @@ export const deleteRecipe = (recipeId) => {
         fetch(`http://localhost:3000/api/v1/recipes/${recipeId}`, {
             headers: {
                 'Content-Type': 'application/json',
-                Accept: 'application/json'
+                'Accept': 'application/json'
             },
             method: 'DELETE',
         })

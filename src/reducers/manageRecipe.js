@@ -3,13 +3,13 @@ const manageRecipe = (state = {recipes: []}, action) => {
             
             case 'FETCH_RECIPES':
                 // debugger
-                console.log("reducer loading recipe", state)
+                console.log("reducer loading recipe", action)
             return {
                     
                     ...state, 
                         // recipes: [...state.recipes]
                         recipes: action.payload
-                        // recipes: [...state.recipes, action.payload]
+                        // recipes: [...state.recipes, action.payload] X noo
                         // loading: true
                 }
 

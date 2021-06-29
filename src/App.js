@@ -5,19 +5,17 @@ import RecipeContainer from './containers/RecipeContainer';
 // import {connect} from 'react-redux'
 
 class App extends Component {
-  
+
   render() {
     console.log("app render")
-    
-        
+
     return (
         <div className="App">
-          <h1>Recipes Library</h1>
+          <h1>Recipes App</h1>
           <RecipeContainer/>
-
         </div>
-  );
-}
+    );
+  }
 }
 // const mapStateToProps = (state) => {
 //   console.log("inside app.js", state)
@@ -25,9 +23,9 @@ class App extends Component {
 //     recipes: state.recipes,
 //     loading: state.loading
 //   }
-// } 
+// }
 // const mapDispatchToProps = (dispatch) => {
-  
+
 //   return {
 //     fetchRecipes: () => dispatch(fetchRecipes()),
 //     addRecipe: () => dispatch(addRecipe())
