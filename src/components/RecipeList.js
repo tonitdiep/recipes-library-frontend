@@ -16,7 +16,8 @@ const RecipeList = (props) => {
     <div>
       <ul>
         {
-          props.recipes.map( recipe =>
+          props.recipes && props.recipes.map( recipe =>
+          // props.recipes.map( recipe =>
             <li key={recipe.id}>
               <Link to={`/recipes/${recipe.id}`}> {recipe.name} </Link>
               <button onClick={() => handleDelete(recipe)}>X</button>

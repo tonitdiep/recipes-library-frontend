@@ -7,7 +7,7 @@ class RecipeForm extends Component {
         cuisine_country: '',
         dietary_type: '',
         cook_time: null,
-        spice_level: null,
+        spice_level: '',
         rating: null,
         serving_size: null,
         skill_level: null,
