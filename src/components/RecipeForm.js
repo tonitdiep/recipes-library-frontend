@@ -10,7 +10,7 @@ class RecipeForm extends Component {
         spice_level: null,
         rating: null,
         serving_size: null,
-        skill_level: '',
+        skill_level: null,
         starred: false 
 
     }
@@ -26,7 +26,7 @@ class RecipeForm extends Component {
             spice_level: '',
             rating: null,
             serving_size: null,
-            skill_level: '',
+            skill_level: null,
             starred: false
         })
     }
@@ -53,7 +53,7 @@ class RecipeForm extends Component {
                 <input type="number" value={this.state.cook_time}  step="0" min="1" max="60" name="cook_time" onChange={(event) => this.handleOnChange(event)}/> minutes<br/><br/>
                 
                 <label>Spice Level: </label>
-                <select type="text" value={this.state.spice_level} name="spice_level" onChange={(event) => this.handleOnChange(event)}>
+                <select  value={this.state.spice_level} name="spice_level" onChange={(event) => this.handleOnChange(event)}>
                     <option value="0">Select Spice Level:</option>
                     <option value="1">None</option>
                     <option value="2">Mild</option>
@@ -67,7 +67,7 @@ class RecipeForm extends Component {
                 <input type="number" value={this.state.serving_size} name="serving_size" step="0" min="0" max="5" onChange={(event) => this.handleOnChange(event)}/><br/><br/>
                 
                 <label>Skill Level: </label>
-                <select type="text" value={this.state.skill_level} name="skill_level" onChange={(event) => this.handleOnChange(event)}>
+                <select  value={this.state.skill_level} name="skill_level" onChange={(event) => this.handleOnChange(event)}>
                     <option value="0">Select Skill Level:</option>
                     <option value="1">Easy</option>
                     <option value="2">Difficult</option>

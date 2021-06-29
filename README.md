@@ -1,10 +1,26 @@
-# Getting Started with Create React App
+# Recipes Library
+Frontend Repo: https://github.com/tonitdiep/recipes-library-frontend
+Please run both servers of the backend and frontend start up the Recipes Library application.
 
+## Starting Up Frontend
+* Run 'npm install' 
+
+* Run 'npm start' 
+
+Backend Repo: https://github.com/tonitdiep/recipes-library-backend
+
+Running Backend Steps:
+
+* Run 'bundle install' 
+
+* Run 'rails s' to start up API
+
+* If necessary, run 'rails db:migrate' and then 'rails db:seed' after 'bundle install' to finally running 'rails s' for an overall starting up for the backend
+
+<!-- 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
 
-In the project directory, you can run:
 
 ### `npm start`
 
@@ -67,4 +83,4 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 
 ### `npm run build` fails to minify
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify) -->

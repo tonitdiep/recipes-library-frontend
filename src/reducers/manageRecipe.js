@@ -39,8 +39,7 @@ const manageRecipe = (state = {recipes: []}, action) => {
 
                 return {
                     // ...state, recipes: [...state.recipes, action.payload]
-                    ...state, recipes: recipeDeleting
-               
+                    ...state, recipes: recipeDeleting 
                 }    
         default:
             return state
