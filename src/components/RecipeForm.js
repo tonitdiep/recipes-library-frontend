@@ -7,11 +7,11 @@ class RecipeForm extends Component {
         cuisine_country: '',
         dietary_type: '',
         cook_time: null,
-        spice_level: '',
+        spice_level: null,
         rating: null,
         serving_size: null,
         skill_level: null,
-        starred: false 
+        starred: 0 
 
     }
     handleOnSubmit = (event) => {
@@ -23,11 +23,11 @@ class RecipeForm extends Component {
             cuisine_country: '',
             dietary_type: '',
             cook_time: null,
-            spice_level: '',
+            spice_level: null,
             rating: null,
             serving_size: null,
             skill_level: null,
-            starred: false
+            starred: 0
         })
     }
 
@@ -62,7 +62,7 @@ class RecipeForm extends Component {
                 </select><br/><br/>
                 
                 <label>Rating: </label>     
-                <input type="number" value={this.state.rating} step="0" min="1" max="5" name="rating" onChange={(event) => this.handleOnChange(event)}/><br/><br/>
+                <input type="integer" value={this.state.rating} step="0" min="1" max="5" name="rating" onChange={(event) => this.handleOnChange(event)}/><br/><br/>
                 <label>Serving Size: </label>
                 <input type="number" value={this.state.serving_size} name="serving_size" step="0" min="0" max="5" onChange={(event) => this.handleOnChange(event)}/><br/><br/>
                 
