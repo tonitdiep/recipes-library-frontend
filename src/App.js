@@ -2,6 +2,7 @@
 import './App.css';
 import React, {Component} from 'react';
 import RecipeContainer from './containers/RecipeContainer';
+import StarredContainer from './containers/StarredContainer'
 // import {connect} from 'react-redux'
 
 class App extends Component {
@@ -12,6 +13,7 @@ class App extends Component {
     return (
         <div className="App">
           <h1>Recipes App</h1>
+          {/* <StarredContainer/> */}
           <RecipeContainer/>
         </div>
     );

@@ -49,6 +49,7 @@ class RecipeForm extends Component {
                 <input type="text" value={this.state.cuisine_country} name="cuisine_country" onChange={(event) => this.handleOnChange(event)}/><br/><br/>
                 <label>Dietary Type: </label>
                 <input type="text" value={this.state.dietary_type} name="dietary_type" onChange={(event) => this.handleOnChange(event)}/><br/><br/>
+                
                 <label>Cook Time: </label>
                 <input type="number" value={this.state.cook_time}  step="0" min="1" max="60" name="cook_time" onChange={(event) => this.handleOnChange(event)}/> minutes<br/><br/>
                 
@@ -58,11 +59,11 @@ class RecipeForm extends Component {
                     <option value="1">None</option>
                     <option value="2">Mild</option>
                     <option value="3">Spicy</option>
-                    <option value="4">Deadly Spicy</option>
                 </select><br/><br/>
                 
                 <label>Rating: </label>     
                 <input type="integer" value={this.state.rating} step="0" min="1" max="5" name="rating" onChange={(event) => this.handleOnChange(event)}/><br/><br/>
+                
                 <label>Serving Size: </label>
                 <input type="number" value={this.state.serving_size} name="serving_size" step="0" min="0" max="5" onChange={(event) => this.handleOnChange(event)}/><br/><br/>
                 

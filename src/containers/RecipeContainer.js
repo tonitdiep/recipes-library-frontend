@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import {connect} from 'react-redux' 
-import {Route} from 'react-router-dom'
+import {Route, Switch} from 'react-router-dom'
 import {fetchRecipes} from '../actions/fetchRecipes'
 import RecipeForm from '../components/RecipeForm';
 import RecipeList from '../components/RecipeList';
@@ -14,17 +14,19 @@ class RecipeContainer extends Component {
     render() {
         return (
             <div>
-            {/* <Switch>     */}
-                <Route path='/recipes/new' component={RecipeForm}/>
-
+            <Switch>    
+                <Route exact path='/recipes/new' component={RecipeForm}/>
+                <Route exact path='/recipes/' component={RecipeList}/>
+                <Route exact path='/recipes/:id' component={RecipeShow}/>
                 {/* Show A Recipe ID: <Route exact path='recipes/:id' render={(routerProps) => <RecipeShow {...routerProps} recipes={this.props.recipes}/>}/><br/> */}
 
-                <Route exact path='/recipes' render={(routerProps) => <RecipeList {...routerProps} recipes={this.props.recipes}/>}/>
+                {/* <Route exact path='/recipes' render={(routerProps) => <RecipeList {...routerProps} recipes={this.props.recipes}/>}/> */}
                 <br/><br/>
-                <Route path='/recipes/:id' render={(routerProps) => <RecipeShow {...routerProps} recipes={this.props.recipes}/>}/>
+                {/* <Route exact path='/recipes/:id' render={(routerProps) => <RecipeShow {...routerProps} recipes={this.props.recipes}/>}/> */}
+
 
                 <br/><br/>
-            {/* </Switch> */}
+            </Switch>
             </div>
 
         )
