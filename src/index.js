@@ -10,6 +10,8 @@ import thunk from 'redux-thunk'
 import {BrowserRouter as Router} from 'react-router-dom'
 // import { composeWithDevTools} from 'redux-devtools-extension'
 
+import Navigation from "./components/Navigation"
+
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 let store = createStore(manageRecipe, composeEnhancers(applyMiddleware(thunk)))
 
@@ -19,6 +21,7 @@ let store = createStore(manageRecipe, composeEnhancers(applyMiddleware(thunk)))
 ReactDOM.render(
   <Provider store={store}>
     <Router>
+      <Navigation/>
     <App />
     </Router>
   </Provider>,

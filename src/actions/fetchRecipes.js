@@ -10,7 +10,7 @@ export const fetchRecipes = () => {
             {debugger
                 dispatch ({
                 type: "FETCH_RECIPES", 
-                payload: recipes.data })}
+                payload: recipes })}
             );
     }; 
 }

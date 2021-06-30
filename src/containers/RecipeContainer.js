@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import {connect} from 'react-redux' 
-import {Route, Switch} from 'react-router-dom'
+import {Link, Route, Switch} from 'react-router-dom'
 import {fetchRecipes} from '../actions/fetchRecipes'
 import RecipeForm from '../components/RecipeForm';
 import RecipeList from '../components/RecipeList';
@@ -14,19 +14,28 @@ class RecipeContainer extends Component {
     render() {
         return (
             <div>
-            <Switch>    
+                <p>Recipe Container</p>
+            {/* <Switch>    */}
                 <Route exact path='/recipes/new' component={RecipeForm}/>
-                <Route exact path='/recipes/' component={RecipeList}/>
-                <Route exact path='/recipes/:id' component={RecipeShow}/>
+                {/* </Switch>  */}
+                {/* <Route exact path='/recipes/' component={RecipeList}/> */}
+                
+                {/* <Link to={'/recipes/:id'}>Recipe Show</Link> */}
+
+
                 {/* Show A Recipe ID: <Route exact path='recipes/:id' render={(routerProps) => <RecipeShow {...routerProps} recipes={this.props.recipes}/>}/><br/> */}
-
-                {/* <Route exact path='/recipes' render={(routerProps) => <RecipeList {...routerProps} recipes={this.props.recipes}/>}/> */}
+               
+                <Switch>
+                <Route  path='/recipes' render={(routerProps) => <RecipeList {...routerProps} recipes={this.props.recipes}/>}/>
                 <br/><br/>
-                {/* <Route exact path='/recipes/:id' render={(routerProps) => <RecipeShow {...routerProps} recipes={this.props.recipes}/>}/> */}
+                </Switch>
 
 
+                <Route exact path='/recipes/:id' render={(routerProps) => <RecipeShow {...routerProps} recipes={this.props.recipes}/>}/>
+                {/* <Switch>
+                <Route exact path='/recipes/:id' render={(routerProps) => <RecipeShow {...routerProps} recipes={this.props.recipes}/>}/>
                 <br/><br/>
-            </Switch>
+                </Switch>  */}
             </div>
 
         )

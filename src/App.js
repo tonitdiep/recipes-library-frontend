@@ -4,7 +4,8 @@ import React, {Component} from 'react';
 import RecipeContainer from './containers/RecipeContainer';
 import StarredContainer from './containers/StarredContainer'
 // import {connect} from 'react-redux'
-
+import Home from './components/Home'
+import {Route, Switch} from 'react-router-dom'
 class App extends Component {
 
   render() {
@@ -14,6 +15,11 @@ class App extends Component {
         <div className="App">
           <h1>Recipes App</h1>
           {/* <StarredContainer/> */}
+          <Switch>
+          <Route exact path='/' component={Home}/>
+          </Switch>
+
+   
           <RecipeContainer/>
         </div>
     );

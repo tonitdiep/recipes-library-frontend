@@ -8,18 +8,19 @@ const manageRecipe = (state = {recipes: []}, action) => {
                     
                     ...state, 
                         // recipes: [...state.recipes]
-                        recipes: action.payload
-                        // recipes: [...state.recipes, action.payload] X noo
+                        recipes: action.payload    
+                        // recipes: [...state.recipes, action.payload] 
                         // loading: true
                 }
 
-
+                // action.action.payload
             case 'ADD_RECIPE':
                 debugger
                 let recipes = state.recipes.map(recipe =>{
                     debugger
                     if (recipe.id === action.payload.id) {
-                        return action.payload
+                        return action.action.payload
+                        // action.payload
                     } else {
                         return recipe
                     }

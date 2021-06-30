@@ -11,6 +11,6 @@ export const addRecipe = (data) => {
             body: JSON.stringify(data)
         })
             .then((res) => res.json())
-            .then((recipe) => dispatch({ type: "ADD_RECIPE", payload: recipe.data}));
+            .then((recipe) => dispatch({ type: "ADD_RECIPE", payload: recipe.id}));
     };
 };

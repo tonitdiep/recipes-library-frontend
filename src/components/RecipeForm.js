@@ -54,7 +54,7 @@ class RecipeForm extends Component {
                 <input type="number" value={this.state.cook_time}  step="0" min="1" max="60" name="cook_time" onChange={(event) => this.handleOnChange(event)}/> minutes<br/><br/>
                 
                 <label>Spice Level: </label>
-                <select  value={this.state.spice_level} name="spice_level" onChange={(event) => this.handleOnChange(event)}>
+                <select type="number" value={this.state.spice_level} name="spice_level" onChange={(event) => this.handleOnChange(event)}>
                     <option value="0">Select Spice Level:</option>
                     <option value="1">None</option>
                     <option value="2">Mild</option>
@@ -62,7 +62,7 @@ class RecipeForm extends Component {
                 </select><br/><br/>
                 
                 <label>Rating: </label>     
-                <input type="integer" value={this.state.rating} step="0" min="1" max="5" name="rating" onChange={(event) => this.handleOnChange(event)}/><br/><br/>
+                <input type="number" value={this.state.rating} step="0" min="1" max="5" name="rating" onChange={(event) => this.handleOnChange(event)}/><br/><br/>
                 
                 <label>Serving Size: </label>
                 <input type="number" value={this.state.serving_size} name="serving_size" step="0" min="0" max="5" onChange={(event) => this.handleOnChange(event)}/><br/><br/>
@@ -86,10 +86,10 @@ class RecipeForm extends Component {
     }
 }
 
-// const mapDispatchToProps = dispatch => ({
+// const mapDispatchToProps = (dispatch) => ({
 
-//         // loadRecipe: loadRecipe => dispatch({ type: "LOAD_RECIPE"}),
-//         fetchRecipes: recipeLoaded => dispatch ({type: "FETCH_RECIPES"}),
+// //         // loadRecipe: loadRecipe => dispatch({ type: "LOAD_RECIPE"}),
+// //         fetchRecipes: recipeLoaded => dispatch ({type: "FETCH_RECIPES"}),
 //         addRecipe: addRecipe => dispatch({ type: "ADD_RECIPE"})
 
 // })
