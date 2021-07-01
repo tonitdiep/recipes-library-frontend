@@ -49,9 +49,11 @@ const RecipeShow = (props) => {
     debugger
     let recipe = props.recipes.filter(recipe => recipe.id == props.match.params.id)[0]
 
-    console.log("inside show component", props.recipe)
-    let ratingValue = props.recipes[props.match.params.id]
-    // let spice_txt = ["no spice", "some spice", "lotta spice"]
+    debugger
+    // let ratingValue = props.recipes[props.match.params.url]
+    let ratingValue = ["*", "**", "***", "****", "*****"]
+    let servingCount = ["o", "oo", "ooo"]
+    let spice_txt = ["Mild", "Hot", "Super Hot"]
     return (
         <div>
             <h2>
@@ -61,13 +63,13 @@ const RecipeShow = (props) => {
                 Cuisine Country: {recipe ? recipe.cuisine_country : null}<br/> 
                 Dietary Type: {recipe ? recipe.dietary_type : null}<br/>
                 
-                {/* Rating: {recipe ? [recipe.rating] : null}<br/> */}
-                Rating: {recipe ? ratingValue[recipe.rating - 1] : null}<br/>
+                {/* Rating: {recipe ? recipe[recipe.rating] : null}<br/> */}
+                Rating: {recipe ? ratingValue[recipe.rating] : null}<br/>
 
                 Skill Level: {recipe ? recipe.skill_level : null}<br/>
 
-                Serving Size: {recipe ? recipe.serving_size : null}<br/>
-                Spice Level: {recipe ? recipe.spice_level : null}<br/>
+                Servings: {recipe ? servingCount[recipe.serving_size] : null}<br/>
+                Spice Level: {recipe ? spice_txt[recipe.spice_level] : null}<br/>
                 Starred: {recipe ? recipe.starred : null}
 
             </h2>
