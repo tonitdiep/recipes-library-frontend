@@ -15,33 +15,33 @@ const manageRecipe = (state = {recipes: []}, action) => {
 
                 // action.action.payload
             case 'ADD_RECIPE':
-                debugger
-                let recipes = state.recipes.map(recipe =>{
-                    debugger
-                    if (recipe.id === action.payload.id) {
-                        return action.action.payload
+debugger    
+                // let recipes = state.recipes.map(recipe =>{
+
+                    // if (recipe.id === action.payload.id) {
+                        // return action.action.payload
                         // action.payload
-                    } else {
-                        return recipe
-                    }
-                })
-                // return {recipes: [...state.recipes, action.payload]}
-                return {...state, recipes: recipes}
+                    // } else {
+                        // return recipe
+                    // }
+                // })
+                return {recipes: [...state.recipes, action.payload]}
+                // return {...state, recipes: recipes}
              
                 case 'DELETE_RECIPE': 
-                console.log("delete recipe", action)
-                const recipeDeleting = state.recipes.filter(recipe => 
-                    {
-                        if (recipe.id === action.payload.id) {
-                            return action.payload
-                        } else {
-                            return recipe
-                        }
-                    })
+                // console.log("delete recipe", action)
+                // const recipeDeleting = state.recipes.filter(recipe => 
+                //     {
+                //         if (recipe.id === action.payload.id) {
+                //             return action.payload
+                //         } else {
+                //             return recipe
+                //         }
+                //     })
 
                 return {
                     // ...state, recipes: [...state.recipes, action.payload]
-                    ...state, recipes: recipeDeleting 
+                     recipes: state.recipes.filter( recipe =>  recipe.id !== action.payload) 
                 }    
         default:
             return state

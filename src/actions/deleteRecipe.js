@@ -8,14 +8,14 @@ export const deleteRecipe = (recipeId) => {
             method: 'DELETE',
         })
             .then(res => res.json())
-            .then(deleted_recipe => {
+            .then(deletedRecipeId => {
                 
-                debugger
+                
                 dispatch({
                 
                 type: 'DELETE_RECIPE',
                 // recipeId: recipeId
-                payload: deleted_recipe
+                payload: deletedRecipeId
             })})}
     }
 

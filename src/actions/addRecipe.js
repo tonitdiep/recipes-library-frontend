@@ -10,7 +10,11 @@ export const addRecipe = (data) => {
             method: 'POST',  
             body: JSON.stringify(data)
         })
+        
             .then((res) => res.json())
-            .then((recipe) => dispatch({ type: "ADD_RECIPE", payload: recipe.id}));
+        
+            .then((recipe) =>{ 
+                debugger
+                dispatch({ type: "ADD_RECIPE", payload: recipe})});
     };
 };

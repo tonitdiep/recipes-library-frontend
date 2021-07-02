@@ -3,16 +3,16 @@ import React from 'react'
 import {Link} from 'react-router-dom'
 
 const RecipeShow = (props) => {
-    debugger
+
     let recipe = props.recipes.filter(recipe => recipe.id == props.match.params.id)[0]
 
-    debugger
+
     // let ratingValue = props.recipes[props.match.params.url]
     let ratingValue = ["*", "**", "***", "****", "*****"]
     let servingCount = ["One", "Two", "Three"]
     let spice_txt = ["Mild", "Hot", "Super Hot"]
     let skills = ["Easy", "Moderate", "Arduous"]
-    
+    let starredCheck = ["*"]
     // starredCheck ? true : false 
     return (
         <div>
@@ -31,7 +31,7 @@ const RecipeShow = (props) => {
 
                 Servings: {recipe ? servingCount[recipe.serving_size] : null}<br/>
                 Spice Level: {recipe ? spice_txt[recipe.spice_level] : null}<br/>
-                Starred: {recipe ? [recipe.starred] : null}
+                Starred: {recipe ? starredCheck[recipe.starred] : null}
 
             </h2>
             <Link exact to={`/recipes/`}>Back To Recipes Library</Link>

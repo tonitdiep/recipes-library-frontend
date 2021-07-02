@@ -34,11 +34,10 @@ class RecipeForm extends Component {
     }
 
 
-
     handleOnChange = (event) => {
+        
         this.setState({
-            [event.target.name]: event.target.value,
-            [event.target.starred]: event.target.value     
+            [event.target.name]: event.target.value   
         });
     }
     render() {
@@ -89,8 +88,13 @@ class RecipeForm extends Component {
                 </select><br/><br/>
                 
                 <label>Starred Recipe </label>
-                <input type="checkbox" checked="checked" value={this.state.starred ? checked = 'checked' 'true' : 'false')  name="starred" onChang={(event) => this.handleOnChange(event)}/><br/><br/>
-                
+                {/* <input type="checkbox" {this.state.starred ? 'checked="checked"': ''} name="starred" onChange={(event) => this.handleOnChange(event)}/> */}
+                {/* <br/><br/> */}
+                {/* <input type="checkbox" {this.state.starred ? 'checked="checked"' true : false} name="starred" onChange={(event) => this.handleOnChange(event)}/>
+                <br/><br/> */}
+                    Fav This Recipe: <input type="checkbox" value={!this.state.starred} name="starred" onChange={(event) => this.handleOnChange(event)}/>
+
+                <br/><br/>
                 <input type="submit" value="Submit Recipe"/>
    
                 </form>
