@@ -1,6 +1,6 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
-const Home = (props) => {
+const Home = () => {
     return (
         <div>
             <h1>
@@ -12,19 +12,9 @@ const Home = (props) => {
                 </p>
 
                 
-{/* 
-                <ul>
-        {
-        //   props.recipes && props.recipes.map( recipe =>
-          props.recipes.map( recipe =>
-            // <li key={recipe.id}>
-              <Link to={`/recipes/${recipe.id}`}> {recipe.name} </Link>
-            // </li>
-          )
-        }
-      </ul> */}
-            <Link to={`/recipes/new`}>Add New Recipe</Link><br/><br/>
-            <Link to={`/recipes`}>View Recipes</Link>
+
+            {/* <Link to={`/recipes/new`}>Add New Recipe</Link><br/><br/>
+            <Link to={`/recipes`}>View Recipes</Link> */}
 
 
         </div>

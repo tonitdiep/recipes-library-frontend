@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import {addRecipe} from '../actions/addRecipe'
 import {connect} from "react-redux";
+
 class RecipeForm extends Component {
     state = {
         name: '',
@@ -11,11 +12,12 @@ class RecipeForm extends Component {
         rating: null,
         serving_size: null,
         skill_level: null,
-        starred: 0 
+        starred: false
 
     }
     handleOnSubmit = (event) => {
-        alert('A recipe was submitted: ' + this.state.value);
+        alert('A recipe was submitted ');
+        // + this.state.target.value
         event.preventDefault();
         this.props.addRecipe(this.state);
         this.setState({
@@ -27,17 +29,20 @@ class RecipeForm extends Component {
             rating: null,
             serving_size: null,
             skill_level: null,
-            starred: 0
+            starred: false
         })
     }
 
+
+
     handleOnChange = (event) => {
         this.setState({
-            [event.target.name]: event.target.value
+            [event.target.name]: event.target.value,
+            [event.target.starred]: event.target.value     
         });
     }
     render() {
-        
+         
         return (
             <div>
 
@@ -61,10 +66,20 @@ class RecipeForm extends Component {
                 </select><br/><br/>
                 
                 <label>Rating: </label>     
-                <input type="number" value={this.state.rating} min="0" max="4" name="rating" onChange={(event) => this.handleOnChange(event)}/><br/><br/>
+                <select type="number" value={this.state.rating}  name="rating" onChange={(event) => this.handleOnChange(event)}>
+                    <option value="0">1 Star</option>
+                    <option value="1">2 Stars</option>
+                    <option value="2">3 Stars</option> 
+                    <option value="2">4 Stars</option> 
+                    <option value="2">5 Stars</option>    
+                </select><br/><br/>
                 
                 <label>Servings: </label>
-                <input type="number" value={this.state.serving_size} name="serving_size" min="0" max="2" onChange={(event) => this.handleOnChange(event)}/><br/><br/>
+                <select type="number" value={this.state.serving_size} name="serving_size" min="0" max="2" onChange={(event) => this.handleOnChange(event)}>
+                    <option value="0">1</option>
+                    <option value="1">2</option>
+                    <option value="2">3</option>    
+                </select><br/><br/>
                 
                 <label>Skill Level: </label>
                 <select  type="text" value={this.state.skill_level} name="skill_level" onChange={(event) => this.handleOnChange(event)}>
@@ -74,10 +89,10 @@ class RecipeForm extends Component {
                 </select><br/><br/>
                 
                 <label>Starred Recipe </label>
-                <input type="checkbox" value={this.state.starred} name="starred" onChang={(event) => this.handleOnChange(event)}/><br/><br/>
+                <input type="checkbox" checked="checked" value={this.state.starred ? checked = 'checked' 'true' : 'false')  name="starred" onChang={(event) => this.handleOnChange(event)}/><br/><br/>
                 
                 <input type="submit" value="Submit Recipe"/>
-                {/* {this.state.recipes} */}
+   
                 </form>
                 
             </div>
