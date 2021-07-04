@@ -6,13 +6,13 @@ const RecipeShow = (props) => {
 
     let recipe = props.recipes.filter(recipe => recipe.id == props.match.params.id)[0]
 
-
+debugger
     // let ratingValue = props.recipes[props.match.params.url]
     let ratingValue = ["*", "**", "***", "****", "*****"]
     let servingCount = ["One", "Two", "Three"]
     let spice_txt = ["Mild", "Hot", "Super Hot"]
     let skills = ["Easy", "Moderate", "Arduous"]
-    let starredCheck = ["*"]
+    // let starredCheck = [true, false]
     // starredCheck ? true : false 
     return (
         <div>
@@ -24,14 +24,13 @@ const RecipeShow = (props) => {
                 Cuisine Country: {recipe ? recipe.cuisine_country : null}<br/> 
                 Dietary Type: {recipe ? recipe.dietary_type : null}<br/>
                 
-                {/* Rating: {recipe ? recipe[recipe.rating] : null}<br/> */}
                 Rating: {recipe ? ratingValue[recipe.rating] : null}<br/>
 
                 Skill Level: {recipe ? skills[recipe.skill_level] : null}<br/>
 
                 Servings: {recipe ? servingCount[recipe.serving_size] : null}<br/>
                 Spice Level: {recipe ? spice_txt[recipe.spice_level] : null}<br/>
-                Starred: {recipe ? starredCheck[recipe.starred] : null}
+                Starred Recipe: {recipe ? [recipe.starred] : null}
 
             </h2>
             <Link exact to={`/recipes/`}>Back To Recipes Library</Link>
