@@ -8,13 +8,14 @@ const RecipeShow = (props) => {
 
 debugger
     // let ratingValue = props.recipes[props.match.params.url]
+    let dietChoice = ["Keto", "Low-Carb"]
     let ratingValue = ["*", "**", "***", "****", "*****"]
     let servingCount = ["One", "Two", "Three"]
     let spice_txt = ["Mild", "Hot", "Super Hot"]
     let skills = ["Easy", "Moderate", "Arduous"]
     // let starredCheck = [true, false]
     // starredCheck ? true : false 
-    // let checkedValue = this.state.starred
+
     return (
         <div>
             {/* <i class="fas fa-utensils"></i> */}
@@ -23,7 +24,7 @@ debugger
                 Name: {recipe ? recipe.name : null}<br/>
                 Cook Time: {recipe ? recipe.cook_time : null} minutes <br/> 
                 Cuisine Country: {recipe ? recipe.cuisine_country : null}<br/> 
-                Dietary Type: {recipe ? recipe.dietary_type : null}<br/>
+                Dietary Type: {recipe ? dietChoice[recipe.dietary_type] : null}<br/>
                 
                 Rating: {recipe ? ratingValue[recipe.rating] : null}<br/>
 
