@@ -34,10 +34,21 @@ class RecipeForm extends Component {
 
 
     handleOnChange = (event) => {
-        const isCheckbox = event.target.type === "checkbox";
+        console.log(event.target.value)
+        console.log(event.target.name)
+        // const isCheckbox = event.target.type === checkboox ? target.checked
+        // const target = event.target;
+        // const value = target.type === 'checkbox' ? target.checked : target.value;
+        // const name = target.name;
+        const { value, name } = event.target ;
+
         this.setState({
-            [event.target.name]: event.target.value,
-            [event.target.name]: isCheckbox ? event.target.checked : event.target.value
+            // [event.target.name]: event.target.value
+            [name]: value
+
+
+            
+            // [event.target.name]: isCheckbox ? event.target.checked : event.target.value
 
         });
     }
@@ -89,7 +100,7 @@ class RecipeForm extends Component {
                 </select><br/><br/>
                 
                 <label>Starred Recipe </label>
-                <input type="checkbox" name="starred" checked={!this.state.starred} name="starred" onChange={(event) => this.handleOnChange(event)}/>
+                <input type="checkbox" id="starred" name="starred" value={!this.state.starred} onChange={(event) => this.handleOnChange(event)}/>
                 <br/><br/>
 
                 <input type="submit" value="Submit Recipe"/>
@@ -104,7 +115,7 @@ class RecipeForm extends Component {
 // const mapDispatchToProps = (dispatch) => ({
 
 // //         // loadRecipe: loadRecipe => dispatch({ type: "LOAD_RECIPE"}),
-// //         fetchRecipes: recipeLoaded => dispatch ({type: "FETCH_RECIPES"}),
+// //         fetchRecipes: recipeLoaded => dispatch ({type: "FETCH_RE CIPES"}),
 //         addRecipe: addRecipe => dispatch({ type: "ADD_RECIPE"})
 
 // })

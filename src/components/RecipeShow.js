@@ -14,6 +14,7 @@ debugger
     let skills = ["Easy", "Moderate", "Arduous"]
     // let starredCheck = [true, false]
     // starredCheck ? true : false 
+    // let checkedValue = this.state.starred
     return (
         <div>
             {/* <i class="fas fa-utensils"></i> */}
