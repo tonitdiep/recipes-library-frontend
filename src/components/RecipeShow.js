@@ -7,18 +7,17 @@ const RecipeShow = (props) => {
     let recipe = props.recipes.filter(recipe => recipe.id == props.match.params.id)[0]
 
 debugger
-    // let ratingValue = props.recipes[props.match.params.url]
+
     let dietChoice = ["Keto", "Low-Carb"]
     let ratingValue = ["*", "**", "***", "****", "*****"]
     let servingCount = ["One", "Two", "Three"]
     let spice_txt = ["Mild", "Hot", "Super Hot"]
     let skills = ["Easy", "Moderate", "Arduous"]
-    // let starredCheck = [true, false]
-    // starredCheck ? true : false 
+
 
     return (
         <div>
-            {/* <i class="fas fa-utensils"></i> */}
+         
             <h2>
                 <h3>Recipe Details</h3>
                 Name: {recipe ? recipe.name : null}<br/>
@@ -32,8 +31,9 @@ debugger
 
                 Servings: {recipe ? servingCount[recipe.serving_size] : null}<br/>
                 Spice Level: {recipe ? spice_txt[recipe.spice_level] : null}<br/>
-                Starred Recipe: {recipe ? [recipe.starred] : null}
-
+                Starred Recipe: 
+                {/* {recipe ? recipe.starred : null} */}
+                { recipe ? recipe.starred != <p>Checked Recipe</p> : <p>Not A Fav</p> } 
             </h2>
             <Link exact to={`/recipes/`}>Back To Recipes Library</Link>
         </div>

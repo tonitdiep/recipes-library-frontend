@@ -16,22 +16,26 @@ class RecipeForm extends Component {
     }
 
     handleOnChange = (event) => {
-        console.log(event.target.value)
-        console.log(event.target.type)
- 
-        // let value = this.state.starred
+        // console.log(event.target.value)
+        // console.log(event.target.type)
 
-// debugger
+        // const { value, name } = event.target;
+        // const type = event.target.type   
+        // let name = event.target.name;
+        // let value = event.target.value;
+
+
         const target = event.target;
-        // const type = target.type
         const value = target.type === 'checkbox' ? target.checked : target.value;
         const name = target.name;
-        
+      
+
 
         this.setState({
-            // [event.target.name]: event.target.value,
+            // [event.target.id]: event.target.value,
             [name]: value
-            // [event.target.name]: isCheckbox ? event.target.checked : event.target.value
+            // [name]: type 
+
         });
     }
 
@@ -55,7 +59,7 @@ class RecipeForm extends Component {
 
 
     render() {
-         
+ 
         return (
             <div>
 
@@ -106,14 +110,15 @@ class RecipeForm extends Component {
                     <option value="2">Arduous</option>
                 </select><br/><br/>
                 
-                <label>Starred Recipe </label>
+                <label>Starred Recipe (check to starred recipe) </label>
                     <input 
                         type="checkbox" 
-                        // id="starred" 
+                        id="starred" 
                         name="starred" 
                         checked={this.state.starred} 
-                        onChange={(event) => this.handleOnChange(event)}
-                    />
+      
+                        onChange={this.handleOnChange}
+                    /> 
                 <br/><br/>
 
                 <input type="submit" value="Submit Recipe"/>
