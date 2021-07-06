@@ -20,11 +20,7 @@ class RecipeForm extends Component {
         // console.log(event.target.type)
 
         // const { value, name } = event.target;
-        // const type = event.target.type   
-        // let name = event.target.name;
-        // let value = event.target.value;
-
-
+    
         const target = event.target;
         const value = target.type === 'checkbox' ? target.checked : target.value;
         const name = target.name;
@@ -34,7 +30,7 @@ class RecipeForm extends Component {
         this.setState({
             // [event.target.id]: event.target.value,
             [name]: value
-            // [name]: type 
+   
 
         });
     }
