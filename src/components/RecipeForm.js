@@ -16,22 +16,11 @@ class RecipeForm extends Component {
     }
 
     handleOnChange = (event) => {
-        // console.log(event.target.value)
-        // console.log(event.target.type)
-
-        // const { value, name } = event.target;
-    
         const target = event.target;
         const value = target.type === 'checkbox' ? target.checked : target.value;
         const name = target.name;
-      
-
-
         this.setState({
-            // [event.target.id]: event.target.value,
             [name]: value
-   
-
         });
     }
 
@@ -112,7 +101,6 @@ class RecipeForm extends Component {
                         id="starred" 
                         name="starred" 
                         checked={this.state.starred} 
-      
                         onChange={this.handleOnChange}
                     /> 
                 <br/><br/>

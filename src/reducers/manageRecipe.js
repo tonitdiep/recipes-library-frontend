@@ -43,6 +43,13 @@ debugger
                     // ...state, recipes: [...state.recipes, action.payload]
                      recipes: state.recipes.filter( recipe =>  recipe.id !== action.payload) 
                 }    
+
+                case 'EDIT_RECIPE': 
+                debugger
+                return {
+                    // ...state, recipes: [...state.recipes, action.payload]
+                     recipes: state.recipes.filter( recipe =>  recipe.id !== action.payload) 
+                }    
         default:
             return state
         }

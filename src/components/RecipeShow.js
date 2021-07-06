@@ -31,9 +31,10 @@ debugger
 
                 Servings: {recipe ? servingCount[recipe.serving_size] : null}<br/>
                 Spice Level: {recipe ? spice_txt[recipe.spice_level] : null}<br/>
-                Starred Recipe: {recipe.starred ? <p>Checked Recipe</p> : <p>Not A Fav</p>  }
+                Starred Recipe: {recipe.starred ? "Checked Recipe" : "Not A Fav"}
             </h2>
             <Link exact to={`/recipes/`}>Back To Recipes Library</Link>
+
         </div>
     )
 }
