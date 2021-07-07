@@ -45,7 +45,7 @@ debugger
                 }    
 
                 case 'EDIT_RECIPE': 
-                debugger
+                console.log("inside edit recipe", state)
                 return {
                     // ...state, recipes: [...state.recipes, action.payload]
                      recipes: state.recipes.filter( recipe =>  recipe.id !== action.payload) 

@@ -2,8 +2,8 @@
 import './App.css';
 import React, {Component} from 'react';
 import RecipeContainer from './containers/RecipeContainer';
-import StarredContainer from './containers/StarredContainer'
-import DietChoiceContainer from './containers/DietChoiceContainer'
+
+
 // import {connect} from 'react-redux'
 import Home from './components/Home'
 import {Route, Switch} from 'react-router-dom'
@@ -19,9 +19,10 @@ class App extends Component {
           <Switch>
           <Route exact path='/' component={Home}/>
           </Switch>
-          <StarredContainer/>
-          <DietChoiceContainer/>
           <RecipeContainer/>
+    
+       
+   
         </div>
     );
   }

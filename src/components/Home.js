@@ -1,8 +1,17 @@
-import React from 'react'
+
 import {Link} from 'react-router-dom'
-const Home = () => {
-    return (
-        <div>
+import { fetchRecipes } from '../actions/fetchRecipes'
+import {connect} from 'react-redux'
+import React, { Component } from 'react'
+
+class Home extends Component {
+    componentDidMount = () =>{
+        this.props.fetchRecipes();
+    }
+    
+    render() {
+        return (
+            <div>
             <h1>
                 Greetings!
             </h1>
@@ -13,11 +22,13 @@ const Home = () => {
 
                 
 
-            {/* <Link to={`/recipes/new`}>Add New Recipe</Link><br/><br/>
-            <Link to={`/recipes`}>View Recipes</Link> */}
+            <Link to={`/recipes/new`}>Add New Recipe</Link><br/><br/>
+            <Link to={`/recipes`}>View Recipes</Link>
 
 
         </div>
-    )
+        )
+    }
 }
-export default Home
+
+export default connect(null, {fetchRecipes})(Home)
