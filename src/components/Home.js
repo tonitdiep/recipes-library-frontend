@@ -23,8 +23,8 @@ class Home extends Component {
                 
 
             <Link to={`/recipes/new`}>Add New Recipe</Link><br/><br/>
-            <Link to={`/recipes`}>View Recipes</Link>
-
+            <Link to={`/recipes`}>View Recipes</Link><br/><br/>
+            <Link to={`/recipes/FavRecipes`}>Fav Recipes</Link>
 
         </div>
         )

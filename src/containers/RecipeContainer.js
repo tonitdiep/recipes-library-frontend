@@ -20,10 +20,12 @@ class RecipeContainer extends Component {
  
                 <Route exact path='/recipes/new' component={(routerProps) => <RecipeForm {...routerProps} recipes={this.props.recipes}/>}/>
        
-                <Route exact path='/recipes/:id' component={(routerProps) => <RecipeShow {...routerProps} recipes={this.props.recipes}/>}/>
-                
+          
                 <Route exact path='/recipes/FavRecipes' component={(routerProps) => <StarredContainer {...routerProps} recipes={this.props.recipes}/>}/>
 
+
+                <Route exact path='/recipes/:id' component={(routerProps) => <RecipeShow {...routerProps} recipes={this.props.recipes}/>}/>
+             
                 <br/><br/>
 
        

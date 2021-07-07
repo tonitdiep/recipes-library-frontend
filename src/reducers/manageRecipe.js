@@ -15,7 +15,7 @@ const manageRecipe = (state = {recipes: []}, action) => {
 
                 // action.action.payload
             case 'ADD_RECIPE':
-debugger    
+    
                 // let recipes = state.recipes.map(recipe =>{
 
                     // if (recipe.id === action.payload.id) {

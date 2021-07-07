@@ -22,12 +22,12 @@ const RecipeList = (props) => {
           props.recipes && props.recipes.map( recipe =>
 
             <li key={recipe.id}>
-              <Link to={`/recipes/${recipe.id}`}> {recipe.name} </Link>
-              <button onClick={() => handleDelete(recipe)}>X</button>
-              <button onClick={() => handleEdit(recipe)}>Edit</button>
+              <Link to={`/recipes/${recipe.id}`}> {recipe.name} </Link><br/><br/>
+              <button onClick={() => handleDelete(recipe)}>X</button> {""}
+              <button onClick={() => handleEdit(recipe)}>Edit</button><br/><br/>
             </li>
           )
-        }
+        } 
       </ul>
       <Link exact to={`/recipes/new`}>Add New Recipe</Link><br/>
       {/* <Link exact to={`/recipes/id/`}>Edit Recipe</Link> */}
