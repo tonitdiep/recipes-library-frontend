@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
 import {connect} from 'react-redux' 
 import {Route, Switch} from 'react-router-dom'
-import {fetchRecipes} from '../actions/fetchRecipes'
+// import {fetchRecipes} from '../actions/fetchRecipes'
 import RecipeForm from '../components/RecipeForm';
 import RecipeList from '../components/RecipeList';
 import RecipeShow from '../components/RecipeShow'
-import RecipeEdit from '../components/RecipeEdit';
+// import RecipeEdit from '../components/RecipeEdit';
 import StarredContainer from './StarredContainer';
 
 class RecipeContainer extends Component {
