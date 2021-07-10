@@ -6,28 +6,31 @@ import {connect} from 'react-redux'
 const StarredContainer = (props) => {
     console.log('inside starred container', props.recipes)
     debugger
-    let recipes = props.recipes.map(recipe => recipe.id && recipe.starred === true)
+    // let recipes = props.recipes.map(recipe => recipe.id && recipe.starred === true)
 debugger
     return (
         <div>
             <h2>StarredContainer</h2>
 
-            Starred Recipe: {recipes.starred ? "Checked Recipe" : "Not A Fav"}
+            {/* Starred Recipe: {recipes.starred ? "Checked Recipe" : "Not A Fav"} */}
                 {/* Starred Recipe: {recipes.id === recipes.starred ? "Checked Recipe" : "Not A Fav"}
-                {recipes.id && recipes.starred === true}  */}
+                {recipes.id && recispes.starred === true}  */}
             
             <ul>
                 {
-                
-                props.recipes && props.recipes.map( recipe => 
-                                
+            
+                props.recipes && props.recipes.filter( recipe => 
+                    // recipe.id && recipe.starred === true
+                    {recipe.name && recipe.starred === true}
+                ).map(
                     <li key={recipe.id}>
-                    <Link to={`/recipes/${recipe.id}`}> 
-                        {recipe.name && recipe.starred}
-                    </Link><br/><br/>
-        
-                    </li>
+                    {/* <Link to={`/recipes/${recipe.id}`}>  */}
+                     {/* {recipe.name && recipe.starred === true} */}
+                    {/* </Link><br/><br/>  */}
+                 </li>
                 )
+              
+                
                 } 
             </ul>
 
