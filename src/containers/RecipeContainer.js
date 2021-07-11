@@ -18,7 +18,7 @@ class RecipeContainer extends Component {
 
             <Switch>   
  
-                <Route exact path='/recipes/new' component={(routerProps) => <RecipeForm {...routerProps} recipes={this.props.recipes}/>}/>
+                <Route exact path='/recipes/new' render={(routerProps) => <RecipeForm {...routerProps} recipes={this.props.recipes}/>}/>
        
           
                 <Route exact path='/recipes/FavRecipes' component={(routerProps) => <StarredContainer {...routerProps} recipes={this.props.recipes}/>}/>

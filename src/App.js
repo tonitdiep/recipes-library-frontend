@@ -2,7 +2,7 @@
 import './App.css';
 import React, {Component} from 'react';
 import RecipeContainer from './containers/RecipeContainer';
-import StarredContainer from './containers/StarredContainer'
+// import StarredContainer from './containers/StarredContainer'
 
 // import {connect} from 'react-redux'
 import Home from './components/Home'
@@ -18,9 +18,9 @@ class App extends Component {
           {/* <StarredContainer/> */}
           <Switch>            
           <Route exact path='/' component={Home}/>
+          <RecipeContainer/>
           </Switch>
 
-          <RecipeContainer/>
     
        
    
@@ -28,19 +28,5 @@ class App extends Component {
     );
   }
 }
-// const mapStateToProps = (state) => {
-//   console.log("inside app.js", state)
-//   return {
-//     recipes: state.recipes,
-//     loading: state.loading
-//   }
-// }
-// const mapDispatchToProps = (dispatch) => {
 
-//   return {
-//     fetchRecipes: () => dispatch(fetchRecipes()),
-//     addRecipe: () => dispatch(addRecipe())
-//     // addRecipe: recipe => dispatch({type: "ADD_RECIPE", recipe})
-//   }
-// }
 export default (App);

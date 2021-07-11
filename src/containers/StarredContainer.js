@@ -2,11 +2,12 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 import {connect} from 'react-redux'
+import {fetchRecipes} from '../actions/fetchRecipes'
 
 const StarredContainer = (props) => {
     console.log('inside starred container', props.recipes)
     debugger
-    // let recipes = props.recipes.map(recipe => recipe.id && recipe.starred === true)
+    // let recipe = props.recipes.map(recipe => recipe.id && recipe.starred === true)
 debugger
     return (
         <div>
@@ -19,14 +20,16 @@ debugger
             <ul>
                 {
             
-                props.recipes && props.recipes.filter( recipe => 
+                props.recipes && props.recipes.filter(recipe => 
                     // recipe.id && recipe.starred === true
-                    {recipe.name && recipe.starred === true}
-                ).map(
+                    //  {reci/pe.name && recipe.starred === true}
+                //  ).map(
                     <li key={recipe.id}>
-                    {/* <Link to={`/recipes/${recipe.id}`}>  */}
-                     {/* {recipe.name && recipe.starred === true} */}
-                    {/* </Link><br/><br/>  */}
+
+       
+                     <Link to={`/recipes/${recipe.id}`}> 
+                     { recipe.id && recipe.starred === true}
+                    </Link><br/><br/> 
                  </li>
                 )
               
@@ -44,5 +47,5 @@ console.log("sc mapState", state)
         recipes: state.recipes
     };
 };
-export default connect(mapStateToProps)(StarredContainer)
+export default connect(mapStateToProps, {fetchRecipes})(StarredContainer)
 
