@@ -12,27 +12,21 @@ debugger
     return (
         <div>
             <h2>StarredContainer</h2>
-
-            {/* Starred Recipe: {recipes.starred ? "Checked Recipe" : "Not A Fav"} */}
-                {/* Starred Recipe: {recipes.id === recipes.starred ? "Checked Recipe" : "Not A Fav"}
-                {recipes.id && recispes.starred === true}  */}
             
             <ul>
                 {
             
-                props.recipes && props.recipes.filter(recipe => 
-                    // recipe.id && recipe.starred === true
-                    //  {reci/pe.name && recipe.starred === true}
-                //  ).map(
+                props.recipes && props.recipes.map(recipe => 
                     <li key={recipe.id}>
 
        
                      <Link to={`/recipes/${recipe.id}`}> 
-                     { recipe.id && recipe.starred === true}
+                   
+                     Recipe Name: {recipe ? recipe.name : null}<br/>
+                     Starred Value: {recipe.name && recipe.starred === true ? "Checked Recipe" : "Not A Fav"}
                     </Link><br/><br/> 
                  </li>
-                )
-              
+                ) 
                 
                 } 
             </ul>
