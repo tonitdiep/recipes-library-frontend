@@ -12,8 +12,8 @@ const Navigation = () => {
     return (
         <div>
           <NavLink to='/' exact style={link} activeStyle={{background: 'pink'}}>Home</NavLink> {""}
-          <NavLink to='recipes/new' exact style={link} activeStyle={{background: 'pink'}}>Add New Recipe</NavLink> {""}
-          <NavLink to='recipes' exact style={link} activeStyle={{background: 'pink'}}>View Recipe</NavLink> {""}
+          {/* <NavLink to='recipes/new' exact style={link} activeStyle={{background: 'pink'}}>Add New Recipe</NavLink> {""} */}
+          {/* <NavLink to='recipes' exact style={link} activeStyle={{background: 'pink'}}>View Recipe</NavLink> {""} */}
           {/* <NavLink to='recipe/FavRecipes' exact style={link} activeStyle={{background: 'pink'}}>Fav Recipes</NavLink> */}
         </div>
     )

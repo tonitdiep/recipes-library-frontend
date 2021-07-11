@@ -1,15 +1,18 @@
 import React, { Component } from 'react'
 import {connect} from 'react-redux' 
 import {Route, Switch} from 'react-router-dom'
-// import {fetchRecipes} from '../actions/fetchRecipes'
+import {fetchRecipes} from '../actions/fetchRecipes'
+import {editRecipe} from '../actions/editRecipe'
 import RecipeForm from '../components/RecipeForm';
 import RecipeList from '../components/RecipeList';
 import RecipeShow from '../components/RecipeShow'
-// import RecipeEdit from '../components/RecipeEdit';
+import RecipeEdit from '../components/RecipeEdit';
 import StarredContainer from './StarredContainer';
 
 class RecipeContainer extends Component {
-
+  componentDidMount = () =>{
+    this.props.fetchRecipes();
+}
 
     render() {
 
@@ -26,6 +29,7 @@ class RecipeContainer extends Component {
 
                 <Route exact path='/recipes/:id' component={(routerProps) => <RecipeShow {...routerProps} recipes={this.props.recipes}/>}/>
              
+                <Route exact path='/recipes/:id' component={(routerProps) => <RecipeEdit {...routerProps} recipes={this.props.recipes}/>}/>
                 <br/><br/>
 
        
@@ -33,10 +37,7 @@ class RecipeContainer extends Component {
 
             <Route exact path='/recipes' component={(routerProps) => <RecipeList {...routerProps} recipes={this.props.recipes}/>}/>
             <br/><br/>
-            {/* <Route exact path='/recipes/:id' component={(routerProps) => <RecipeEdit {...routerProps} recipes={this.props.recipes}/>}/> */}
-       
-   
-  
+    
   
             </div>
 
@@ -45,7 +46,7 @@ class RecipeContainer extends Component {
 }
 
 const mapStateToProps = (state) => {
-
+console.log("in recipe container", state)
     return{
 
         recipes: state.recipes
@@ -53,4 +54,4 @@ const mapStateToProps = (state) => {
 
     };
 };
-export default connect(mapStateToProps)(RecipeContainer);
+export default connect(mapStateToProps, {fetchRecipes, editRecipe})(RecipeContainer);

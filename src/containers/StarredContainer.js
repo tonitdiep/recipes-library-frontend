@@ -6,36 +6,27 @@ import {fetchRecipes} from '../actions/fetchRecipes'
 
 const StarredContainer = (props) => {
     console.log('inside starred container', props.recipes)
-    debugger
-    // let recipe = props.recipes.map(recipe => recipe.id && recipe.starred === true)
-debugger
     return (
         <div>
-            <h2>StarredContainer</h2>
-            
+            <h2>StarredContainer</h2> 
             <ul>
                 {
             
                 props.recipes && props.recipes.map(recipe => 
                     <li key={recipe.id}>
 
-       
                      <Link to={`/recipes/${recipe.id}`}> 
                    
                      Recipe Name: {recipe ? recipe.name : null}<br/>
                      Starred Value: {recipe.name && recipe.starred === true ? "Checked Recipe" : "Not A Fav"}
                     </Link><br/><br/> 
                  </li>
-                ) 
-                
-                } 
+                )} 
             </ul>
-
          </div>
     )
 }
 const mapStateToProps = (state) => {
-debugger
 console.log("sc mapState", state)
     return{
         recipes: state.recipes

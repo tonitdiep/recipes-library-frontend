@@ -5,9 +5,9 @@ import {connect} from 'react-redux'
 import React, { Component } from 'react'
 
 class Home extends Component {
-    componentDidMount = () =>{
-        this.props.fetchRecipes();
-    }
+    // componentDidMount = () =>{
+    //     this.props.fetchRecipes();
+    // }
     
     render() {
         return (
@@ -31,4 +31,6 @@ class Home extends Component {
     }
 }
 
-export default connect(null, {fetchRecipes})(Home)
+// export default connect(null, {fetchRecipes})(Home)
+
+export default (Home)

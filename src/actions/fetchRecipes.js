@@ -14,3 +14,4 @@ export const fetchRecipes = () => {
             );
     }; 
 }
+// export default fetchRecipes

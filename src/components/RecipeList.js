@@ -5,7 +5,6 @@ import {deleteRecipe} from '../actions/deleteRecipe'
 import {editRecipe} from '../actions/editRecipe'
 const RecipeList = (props) => {
 
-
   const handleDelete = (recipe) => {
      props.deleteRecipe(recipe.id)
   }

@@ -7,10 +7,9 @@ const manageRecipe = (state = {recipes: []}, action) => {
                 return {
                         
                         ...state, 
-                            // recipes: [...state.recipes]
+                         
                             recipes: action.payload    
-                            // recipes: [...state.recipes, action.payload] 
-                            // loading: true
+
                     }
 
 
