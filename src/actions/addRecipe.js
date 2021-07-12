@@ -14,7 +14,7 @@ export const addRecipe = (data) => {
             .then((res) => res.json())
         
             .then((recipe) =>{ 
-                debugger
+        
                 dispatch({ type: "ADD_RECIPE", payload: recipe})});
     };
 };

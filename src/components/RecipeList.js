@@ -26,7 +26,6 @@ const RecipeList = (props) => {
       </ul>
       <Link exact to={`/recipes/new`}>Add New Recipe</Link><br/>
   
-      <hr/>
     </div>
   )
 }

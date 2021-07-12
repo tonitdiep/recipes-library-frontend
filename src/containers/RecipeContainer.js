@@ -11,7 +11,6 @@ import StarredContainer from './StarredContainer';
 class RecipeContainer extends Component {
     
   componentDidMount = () =>{
-      debugger
     this.props.fetchRecipes();
     }
 
@@ -29,13 +28,11 @@ class RecipeContainer extends Component {
 
                 <Route exact path='/recipes/:id' component={(routerProps) => <RecipeShow {...routerProps} recipes={this.props.recipes}/>}/>
              
+                <Route exact path='/recipes' component={(routerProps) => <RecipeList {...routerProps} recipes={this.props.recipes}/>}/>
                 <br/><br/>
 
        
             </Switch>
-
-            <Route exact path='/recipes' component={(routerProps) => <RecipeList {...routerProps} recipes={this.props.recipes}/>}/>
-            <br/><br/>
     
             </div>
 
@@ -49,4 +46,5 @@ const mapStateToProps = (state) => {
         recipes: state.recipes
     };
 };
-export default connect(mapStateToProps, {fetchRecipes, fetchRecipes})(RecipeContainer);
+
+export default connect(mapStateToProps, {fetchRecipes})(RecipeContainer);

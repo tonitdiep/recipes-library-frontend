@@ -5,8 +5,6 @@ const RecipeShow = (props) => {
 
     let recipe = props.recipes.filter(recipe => recipe.id == props.match.params.id)[0]
 
-debugger
-
     let dietChoice = ["Keto", "Low-Carb"]
     let ratingValue = ["*", "**", "***", "****", "*****"]
     let servingCount = ["One", "Two", "Three"]
