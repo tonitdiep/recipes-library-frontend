@@ -15,10 +15,11 @@ const StarredContainer = (props) => {
                 props.recipes && props.recipes.map(recipe => 
                     <li key={recipe.id}>
 
-                     <Link to={`/recipes/${recipe.id}`}> 
+                     
                    
                      Recipe Name: {recipe ? recipe.name : null}<br/>
-                     Starred Value: {recipe.name && recipe.starred === true ? "Checked Recipe" : "Not A Fav"}
+                     <Link to={`/recipes/${recipe.id}`}> 
+                     Starred Value: {recipe.name && recipe.starred === true ? "Recipe Favorite!" : "Not A Fav"}
                     </Link><br/><br/> 
                  </li>
                 )} 
