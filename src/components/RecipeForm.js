@@ -56,7 +56,6 @@ class RecipeForm extends Component {
                 <input type="text" value={this.state.cuisine_country} name="cuisine_country" onChange={(event) => this.handleOnChange(event)}/><br/><br/>
                
                 <label>Dietary Type: </label>
-                {/* <input type="text" value={this.state.dietary_type} name="dietary_type" onChange={(event) => this.handleOnChange(event)}/><br/><br/> */}
                 <select  type="text" value={this.state.dietary_type} name="dietary_type" onChange={(event) => this.handleOnChange(event)}>
                     <option value="0">Keto</option>
                     <option value="1">Low-Carb</option>
@@ -114,11 +113,5 @@ class RecipeForm extends Component {
     }
 }
 
-// const mapDispatchToProps = (dispatch) => ({
 
-// //         // loadRecipe: loadRecipe => dispatch({ type: "LOAD_RECIPE"}),
-// //         fetchRecipes: recipeLoaded => dispatch ({type: "FETCH_RE CIPES"}),
-//         addRecipe: addRecipe => dispatch({ type: "ADD_RECIPE"})
-
-// })
 export default connect(null, {addRecipe})(RecipeForm);
