@@ -13,7 +13,10 @@ class RecipeContainer extends Component {
   componentDidMount = () =>{
     this.props.fetchRecipes();
     }
-
+//   componentDidUpdate = () =>{
+//       debugger
+//         // this.props.fetchRecipes();
+//         }
 
     render() {
 

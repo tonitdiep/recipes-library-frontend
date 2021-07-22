@@ -32,15 +32,14 @@ class RecipeForm extends Component {
             name: '',
             cuisine_country: '',
             dietary_type: '',
-            cook_time: null,
-            spice_level: null,
-            rating: null,
-            serving_size: null,
-            skill_level: null,
-            starred: false
+            cook_time: '',
+            spice_level: '',
+            rating: '',
+            serving_size: '',
+            skill_level: '',
+            starred: ''
         })
     }
-
 
 
     render() {
