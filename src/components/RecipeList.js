@@ -8,11 +8,8 @@ import {deleteRecipe} from '../actions/deleteRecipe'
 const RecipeList = (props) => {
 
   const handleDelete = (recipe) => {
-
      props.deleteRecipe(recipe)
     }
-
-
 
 
   return (
@@ -27,7 +24,6 @@ const RecipeList = (props) => {
             <li key={recipe.id}>
               <Link to={`/recipes/${recipe.id}`}> {recipe.name} </Link><br/>
               <button onClick={() => handleDelete(recipe.id)}>X</button> {""}
-          
             </li>
           )
         } 

@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import {addRecipe} from '../actions/addRecipe'
 import {connect} from "react-redux";
-
+// import { Redirect } from 'react-router';
+import {Redirect} from 'react-router-dom'
 class RecipeForm extends Component {
     state = {
         name: '',
@@ -12,7 +13,8 @@ class RecipeForm extends Component {
         rating: null,
         serving_size: null,
         skill_level: null,
-        starred: false
+        starred: false,
+        redirect: null
     }
 
     handleOnChange = (event) => {
@@ -25,6 +27,7 @@ class RecipeForm extends Component {
     }
 
     handleOnSubmit = (event) => {
+debugger
         alert('A recipe was submitted ');
         event.preventDefault();
         this.props.addRecipe(this.state);
@@ -37,13 +40,22 @@ class RecipeForm extends Component {
             rating: '',
             serving_size: '',
             skill_level: '',
-            starred: ''
+            starred: '',
+            redirect: null
         })
     }
 
 
     render() {
- 
+
+        if (this.state.redirect) {
+            debugger
+            return  <Redirect push to="/recipes/:id" />;
+            //  <Redirect to={this.state.redirect} />;
+           
+            
+           
+       }
         return (
             <div>
 
@@ -103,7 +115,10 @@ class RecipeForm extends Component {
                     /> 
                 <br/><br/>
 
-                <input type="submit" value="Submit Recipe"/>
+                <input type="submit" value="Submit Recipe"  
+                onClick={(event)=> {this.handleOnSubmit(event)}}
+                />
+                {/* <button onClick={() => {this.handle}}>Submit New Recipe</button> */}
    
                 </form>
                 

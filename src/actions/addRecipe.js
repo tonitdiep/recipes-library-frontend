@@ -1,6 +1,6 @@
 
 export const addRecipe = (data) => {
-
+debugger
     return (dispatch) => {
         fetch(`http://localhost:3000/api/v1/recipes`, {  
             headers: {
@@ -14,7 +14,7 @@ export const addRecipe = (data) => {
             .then((res) => res.json())
         
             .then((recipe) =>{ 
-        
+        debugger
                 dispatch({ type: "ADD_RECIPE", payload: recipe})});
     };
 };
