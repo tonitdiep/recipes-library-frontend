@@ -1,5 +1,5 @@
 
-export const addRecipe = (data) => {
+export const addRecipe = (data, recipeId) => {
 debugger
     return (dispatch) => {
         fetch(`http://localhost:3000/api/v1/recipes`, {  
@@ -15,6 +15,11 @@ debugger
         
             .then((recipe) =>{ 
         debugger
-                dispatch({ type: "ADD_RECIPE", payload: recipe})});
+                dispatch({ type: "ADD_RECIPE", payload: recipe})
+                // history.push("/recipes/:id")
+            
+            });
+
     };
+
 };

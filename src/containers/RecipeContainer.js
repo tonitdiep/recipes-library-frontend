@@ -2,42 +2,54 @@ import React, { Component } from 'react'
 import {connect} from 'react-redux' 
 import {Route, Switch, Redirect} from 'react-router-dom'
 import {fetchRecipes} from '../actions/fetchRecipes'
+// import {addRecipe} from '../actions/addRecipe'
 import RecipeForm from '../components/RecipeForm';
 import RecipeList from '../components/RecipeList';
-import RecipeShow from '../components/RecipeShow'
+import RecipeShow from '../components/RecipeShow';
 
 import StarredContainer from './StarredContainer';
 
 class RecipeContainer extends Component {
     
-  componentDidMount = () =>{
-    this.props.fetchRecipes();
+    componentDidMount = () =>{
+      debugger
+        this.props.fetchRecipes();
+
     }
 
-    render() {
+    renderComponent = (Component, props) => (
+        <Component {...props} recipes={this.props.recipes}/>
+    )
 
+    render() {
+        console.log("form redirect = " + this.props.redirect)
+        console.log("form redirect to = " + this.props.redirectTo)
+     
+        if (this.props.redirect && this.props.location.pathname !== this.props.redirectTo) {
+            //this.props.redirected() // another action
+            
+            console.log("aaaa")
+            //console.log("redirect to = " + this.props.redirectTo)
+            
+            return <Redirect to={this.props.redirectTo} />;             
+        }
+debugger
         return (
             <div>
 
             <Switch>   
-
-                <Route exact path='/recipes/new'        
-
-                    component={(routerProps) =>  <RecipeForm {...routerProps} recipes={this.props.recipes}  />   
-                }
-                
-                />
-                    
-                <Route exact path='/recipes/FavRecipes' component={(routerProps) => <StarredContainer {...routerProps} recipes={this.props.recipes}/>}/>
+                <Route exact path='/recipes/new' component={(routerProps) => this.renderComponent(RecipeForm, routerProps)}/> 
+        
+                <Route exact path='/recipes/FavRecipes' render={(routerProps) => <StarredContainer {...routerProps} recipes={this.props.recipes}/>}/>
 
                 <Route exact path='/recipes/:id' component={(routerProps) => <RecipeShow {...routerProps} recipes={this.props.recipes}/>}/>
-     
-                <Route exact path='/recipes' component={(routerProps) => <RecipeList {...routerProps} recipes={this.props.recipes}/>}/>
+          
+                <Route exact path='/recipes' render={(routerProps) => <RecipeList {...routerProps} recipes={this.props.recipes}/>}/>
                 <br/><br/>
-                <Redirect from="/recipes/new" push to="/recipes/:id"/>
-
+                {/* <Redirect from="/recipes/new" to="/recipes/:id"/> */}
+                {/* <Redirect from={`/recipes/new/`} to={`/recipes/:id`}/> */}
             </Switch>
-
+   {/* <Redirect from="/recipes/new/" to="/recipes/${recipeId}/"/> */}
             </div>
 
         )
@@ -47,7 +59,9 @@ class RecipeContainer extends Component {
 const mapStateToProps = (state) => {
 
     return{
-        recipes: state.recipes
+        recipes: state.recipes, 
+        redirect: state.redirect,
+        redirectTo: state.redirectTo
     };
 };
 

@@ -3,7 +3,7 @@ import './App.css';
 import React, {Component} from 'react';
 import RecipeContainer from './containers/RecipeContainer';
 import Home from './components/Home'
-import {Route, Switch, Redirect} from 'react-router-dom'
+import {Route, Switch} from 'react-router-dom'
 
 class App extends Component {
 
@@ -17,8 +17,7 @@ class App extends Component {
           <Switch>            
           <Route exact path='/' component={Home}/>
           <RecipeContainer/>
-      
-          {/* <Redirect from="/recipes/new" to="/recipes/:id"/> */}
+     
           </Switch>
 
     

@@ -2,7 +2,8 @@ import React from 'react'
 import {Link} from 'react-router-dom'
 
 const RecipeShow = (props) => {
-
+console.log(props)
+debugger
     let recipe = props.recipes.filter(recipe => recipe.id == props.match.params.id)[0]
 
     let dietChoice = ["Keto", "Low-Carb"]
@@ -11,10 +12,10 @@ const RecipeShow = (props) => {
     let spice_txt = ["Mild", "Hot", "Super Hot"]
     let skills = ["Easy", "Moderate", "Arduous"]
 
-
+debugger
     return (
         <div>
-         
+  
             <h2>
                 <h3>Recipe Details</h3>
                 Name: {recipe ? recipe.name : null}<br/>
