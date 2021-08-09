@@ -18,18 +18,19 @@ class RecipeContainer extends Component {
     }
 
     renderComponent = (Component, props) => (
+       
         <Component {...props} recipes={this.props.recipes}/>
     )
 
     render() {
-        console.log("form redirect = " + this.props.redirect)
-        console.log("form redirect to = " + this.props.redirectTo)
+        console.log("form redirect = " , this.props.redirect)
+        console.log("form redirect to = " , this.props.redirectTo)
      
         if (this.props.redirect && this.props.location.pathname !== this.props.redirectTo) {
-            //this.props.redirected() // another action
+            // this.props.redirected() // another action
             
             console.log("aaaa")
-            //console.log("redirect to = " + this.props.redirectTo)
+            // console.log("redirect to = " + this.props.redirectTo)
             
             return <Redirect to={this.props.redirectTo} />;             
         }
@@ -46,10 +47,9 @@ debugger
           
                 <Route exact path='/recipes' render={(routerProps) => <RecipeList {...routerProps} recipes={this.props.recipes}/>}/>
                 <br/><br/>
-                {/* <Redirect from="/recipes/new" to="/recipes/:id"/> */}
-                {/* <Redirect from={`/recipes/new/`} to={`/recipes/:id`}/> */}
+
             </Switch>
-   {/* <Redirect from="/recipes/new/" to="/recipes/${recipeId}/"/> */}
+
             </div>
 
         )
@@ -57,11 +57,11 @@ debugger
 }
 
 const mapStateToProps = (state) => {
-
+debugger
     return{
         recipes: state.recipes, 
         redirect: state.redirect,
-        redirectTo: state.redirectTo
+        // redirectTo: state.redirectTo
     };
 };
 

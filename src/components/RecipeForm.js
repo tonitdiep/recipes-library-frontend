@@ -54,6 +54,7 @@ class RecipeForm extends Component {
    
         //     return <Redirect to={this.state.redirect} />;             
         //    }
+console.log("inside recipeform", this.props.redirect)
 
         if (this.props.redirect) {
             //this.props.redirected() // another action

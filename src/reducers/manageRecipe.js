@@ -11,7 +11,8 @@ const manageRecipe = (state = {recipes: []}, action) => {
             case 'ADD_RECIPE':
                 console.log("reducer location", action.payload)
                 debugger
-                return {recipes: [...state.recipes, action.payload], redirect: true, redirectTo: "/recipes/" + action.payload.id}
+                return {recipes: [...state.recipes, action.payload], 
+                    redirect: true, redirectTo: "/recipes/" + action.payload.id}
              
             case 'DELETE_RECIPE': 
                 return {
