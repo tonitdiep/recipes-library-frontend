@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import {connect} from 'react-redux' 
 import {Route, Switch, Redirect} from 'react-router-dom'
 import {fetchRecipes} from '../actions/fetchRecipes'
-// import {addRecipe} from '../actions/addRecipe'
+import {addRecipe} from '../actions/addRecipe'
 import RecipeForm from '../components/RecipeForm';
 import RecipeList from '../components/RecipeList';
 import RecipeShow from '../components/RecipeShow';
@@ -15,6 +15,7 @@ class RecipeContainer extends Component {
       debugger
         this.props.fetchRecipes();
 
+
     }
 
     renderComponent = (Component, props) => (
@@ -23,14 +24,15 @@ class RecipeContainer extends Component {
     )
 
     render() {
+  
+
         console.log("form redirect = " , this.props.redirect)
         console.log("form redirect to = " , this.props.redirectTo)
      
         if (this.props.redirect && this.props.location.pathname !== this.props.redirectTo) {
-            // this.props.redirected() // another action
-            
+
             console.log("aaaa")
-            // console.log("redirect to = " + this.props.redirectTo)
+        
             
             return <Redirect to={this.props.redirectTo} />;             
         }
@@ -58,10 +60,11 @@ debugger
 
 const mapStateToProps = (state) => {
 debugger
-    return{
+    return {
         recipes: state.recipes, 
         redirect: state.redirect,
-        // redirectTo: state.redirectTo
+        redirectTo: state.redirectTo
+        
     };
 };
 

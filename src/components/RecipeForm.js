@@ -7,12 +7,12 @@ class RecipeForm extends Component {
     state = {
         name: '',
         cuisine_country: '',
-        dietary_type: '',
-        cook_time: null,
-        spice_level: null,
-        rating: null,
-        serving_size: null,
-        skill_level: null,
+        dietary_type: 0,
+        cook_time: 0,
+        spice_level: 0,
+        rating: 0,
+        serving_size: 0,
+        skill_level: 0,
         starred: false
         // redirect: false
     }
@@ -34,13 +34,22 @@ class RecipeForm extends Component {
         this.setState({
             name: '',
             cuisine_country: '',
-            dietary_type: '',
-            cook_time: '',
-            spice_level: '',
-            rating: '',
-            serving_size: '',
-            skill_level: '',
-            starred: ''
+            dietary_type: 0,
+            cook_time: 0,
+            spice_level: 0,
+            rating: 0,
+            serving_size: 0,
+            skill_level: 0,
+            starred: false
+            // name: '',
+            // cuisine_country: '',
+            // dietary_type: '',
+            // cook_time: '',
+            // spice_level: '',
+            // rating: '',
+            // serving_size: '',
+            // skill_level: '',
+            // starred: ''
             // redirect: "/recipes/:id"
         })
     }
@@ -54,12 +63,14 @@ class RecipeForm extends Component {
    
         //     return <Redirect to={this.state.redirect} />;             
         //    }
-console.log("inside recipeform", this.props.redirect)
+        
+        
+// console.log("inside recipeform", this.props.redirect)
 
-        if (this.props.redirect) {
-            //this.props.redirected() // another action
-            return <Redirect to={this.props.redirectTo} />;             
-        }
+        // if (this.props.redirect) {
+        //     //this.props.redirected() // another action
+        //     return <Redirect to={this.props.redirectTo} />;             
+        // }
         return (
             <div>
 

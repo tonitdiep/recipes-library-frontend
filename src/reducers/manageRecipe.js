@@ -1,4 +1,4 @@
-const manageRecipe = (state = {recipes: []}, action) => {
+const manageRecipe = (state = {recipes: [], redirect: false, redirectTo: ''}, action) => {
 
         switch(action.type){
             
@@ -18,6 +18,7 @@ const manageRecipe = (state = {recipes: []}, action) => {
                 return {
                      recipes: state.recipes.filter( recipe =>  recipe.id !== action.payload) 
                 }    
+
 
 
         default:

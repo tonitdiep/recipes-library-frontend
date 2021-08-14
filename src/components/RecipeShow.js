@@ -12,6 +12,9 @@ debugger
     let spice_txt = ["Mild", "Hot", "Super Hot"]
     let skills = ["Easy", "Moderate", "Arduous"]
 
+    // on component did mount
+    // call redirected action from redux
+//change to class export default connect(null, {redirected})(RecipeShow);
 debugger
     return (
         <div>
@@ -36,6 +39,8 @@ debugger
         </div>
     )
 }
+
+
 
 export default RecipeShow
 
