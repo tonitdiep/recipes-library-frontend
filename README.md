@@ -1,6 +1,8 @@
 # Recipes Library
 Frontend Repo: https://github.com/tonitdiep/recipes-library-frontend
-Please run both servers of the backend and frontend start up the Recipes Library application.
+Please run both servers of the backend and frontend start up the Recipes Library application.<br>
+
+🎥 [Demo](https://youtu.be/t1xP4gYZscA)
 
 ## Starting Up Frontend
 * Run 'npm install' 
